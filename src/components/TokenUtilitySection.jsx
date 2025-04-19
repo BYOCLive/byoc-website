@@ -16,6 +16,51 @@ const TokenUtilitySection = () => {
 • 20% for the community treasury to fund future initiatives
 • 10% for marketing and partnerships
 • 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
+• 40% reserved for ecosystem participants and early adopters
+• 25% allocated to the development team (vested over 4 years)
+• 20% for the community treasury to fund future initiatives
+• 10% for marketing and partnerships
+• 5% for liquidity provision
 
 This balanced distribution ensures long-term sustainability while rewarding early supporters of the BYOC ecosystem.`,
       icon: (
@@ -326,46 +371,47 @@ The benefits scale with your staking tier, with longer staking periods and large
           </div>
         </div>
       </div>
-      
-      {/* Popup Overlay */}
-      {activePopup && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="relative bg-gray-900 border border-gray-700 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            {/* Close button */}
-            <button 
-              onClick={closePopup}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            
-            {/* Popup Content */}
-            <div className="p-8">
-              {/* Header with icon */}
-              <div className="flex items-center mb-6">
-                <div className="mr-4 p-3 rounded-full bg-gray-800/50 border border-gray-700">
-                  {popupContent[activePopup].icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white">
-                  {popupContent[activePopup].title}
-                </h3>
+
+    {activePopup && (
+      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="relative bg-gray-900 border border-gray-700 rounded-xl max-w-2xl w-full max-h-[90vh]">
+
+          {/* Close button */}
+          <button 
+            onClick={closePopup}
+            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Scrollable Content */}
+          <div className="p-8 overflow-y-auto max-h-[calc(90vh-1rem)] pr-4">
+            {/* Header with icon */}
+            <div className="flex items-center mb-6">
+              <div className="mr-4 p-3 rounded-full bg-gray-800/50 border border-gray-700">
+                {popupContent[activePopup].icon}
               </div>
-              
-              {/* Content */}
-              <div className="prose prose-invert max-w-none">
-                <p className="text-gray-300 whitespace-pre-line">
-                  {popupContent[activePopup].content}
-                </p>
-              </div>
-              
-              {/* Bottom decoration */}
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-teal-400 to-pink-500"></div>
+              <h3 className="text-2xl font-bold text-white">
+                {popupContent[activePopup].title}
+              </h3>
+            </div>
+
+            {/* Main Content */}
+            <div className="prose prose-invert max-w-none">
+              <p className="text-gray-300 whitespace-pre-line">
+                {popupContent[activePopup].content}
+              </p>
             </div>
           </div>
+
+          {/* Bottom Decoration OUTSIDE scrollable area */}
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-teal-400 to-pink-500 z-10" />
         </div>
-      )}
+      </div>
+    )}
+
     </section>
   );
 };

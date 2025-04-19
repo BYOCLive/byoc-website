@@ -7,7 +7,7 @@ const EcosystemSection = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-teal-400">The BYOC</span>{" "}
-              <span className="text-blue-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Ecosystem</span>
+              <span className="text-blue-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">Ecosystem</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               A complete suite of Web3 products designed to work together, creating a seamless
