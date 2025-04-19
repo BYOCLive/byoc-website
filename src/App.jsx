@@ -1,19 +1,19 @@
-// Main App Component
 import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import EcosystemSection from './components/EcosystemSection';
 import TokenUtilitySection from './components/TokenUtilitySection';
-import RoadmapSection from './components/RoadmapSection'; 
+import RoadmapSection from './components/RoadmapSection';
 import JoinSection from './components/JoinSection';
 import Footer from './components/Footer';
-import './index.css'; // Import your CSS file for global styles
-import './App.css'; // Import your CSS file for custom styles
-
+import CursorTrail from './components/CursorTrail'; // Import the new component
+import './index.css';
+import './App.css';
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white relative">
+      <CursorTrail /> {/* Add the cursor trail component */}
       <Navbar />
       <HeroSection />
       <div id="ecosystem">
@@ -27,7 +27,6 @@ const App = () => {
       </div>
       <JoinSection />
       <Footer />
-      {/* Add other sections as needed */}
     </div>
   );
 };
