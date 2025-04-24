@@ -8,61 +8,9 @@ const TokenUtilitySection = () => {
   // Detailed content for each feature box
   const popupContent = {
     creation: {
-      title: "Creation & Distribution",
-      content: `BYOC tokens are created with a fixed total supply of 100 million tokens. The distribution follows a carefully designed allocation:
-
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-• 40% reserved for ecosystem participants and early adopters
-• 25% allocated to the development team (vested over 4 years)
-• 20% for the community treasury to fund future initiatives
-• 10% for marketing and partnerships
-• 5% for liquidity provision
-
-This balanced distribution ensures long-term sustainability while rewarding early supporters of the BYOC ecosystem.`,
+      title: "Transactions with Online and Offline Merchants",
+      content: `The BYOC community app will enable seamless transactions between customers and both online and offline merchants using the BYOC crypto token. Customers can make purchases by capturing images, scanning QR codes, or tapping their phone. This facilitates peer-to-peer transactions as well. The app is designed to be the primary platform for these BYOC token payments, supporting increased transaction volume.
+`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -70,16 +18,9 @@ This balanced distribution ensures long-term sustainability while rewarding earl
       )
     },
     platform: {
-      title: "Platform Integration",
-      content: `BYOC tokens serve as the foundation of our entire ecosystem, powering multiple features:
-
-• Pay for services and products within the BYOC marketplace
-• Receive rewards for positive contributions
-• Access premium features and content
-• Participate in exclusive events and opportunities
-• Enjoy reduced fees when using BYOC for transactions
-
-The seamless integration across all products creates a cohesive experience while providing real utility for token holders.`,
+      title: "E-commerce Vision and Mainstream Crypto Payments",
+      content: `The ultimate aim of the BYOC community app is to become India's leading cryptocurrency platform, particularly appealing to Gen Z and Gen Beta users Achieving this will enable collaboration with governmental bodies to mainstream crypto payments, positioning BYOC tokens as a prevalent payment method like UPI. The goal is to have millions of users utilising BYOC tokens for transactions across online and offline merchants, playing a significant role in India's next-generation payment systems and the transition towards a cryptocurrency-driven economy.
+`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -89,16 +30,9 @@ The seamless integration across all products creates a cohesive experience while
       )
     },
     staking: {
-      title: "Staking & Rewards",
-      content: `The BYOC staking program offers multiple benefits to encourage long-term holding:
-
-• Base APY of 8-12% when staking for 30+ days
-• Tiered rewards based on staking duration (30, 90, 180, 365 days)
-• Bonus multipliers for larger stake amounts
-• Weekly reward distributions paid directly to your wallet
-• Early unstaking available with reduced rewards
-
-Additionally, staked tokens grant voting power proportional to the amount and duration of your stake, giving long-term holders more influence in governance decisions.`,
+      title: "Marketplace Utility for Content Monetisation",
+      content: `Within the BYOC community app, there will be a marketplace where users can upload and monetise digital content such as comics, blogs, and NFTs. The platform will also feature an auction mode to potentially increase demand for these offerings. This provides creators with a direct way to earn using BYOC tokens.
+`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 2v4"></path>
@@ -113,16 +47,9 @@ Additionally, staked tokens grant voting power proportional to the amount and du
       )
     },
     governance: {
-      title: "Community Governance",
-      content: `BYOC employs a decentralized governance model where token holders have direct influence:
-
-• Submit proposals for platform improvements
-• Vote on feature prioritization and development roadmap
-• Participate in treasury fund allocation decisions
-• Help shape community guidelines and moderation policies
-• Influence tokenomics adjustments and ecosystem parameters
-
-Our governance portal makes participation simple with an intuitive interface for proposal submission and voting. Each BYOC token represents one vote, with the option to delegate voting power to trusted community representatives.`,
+      title: "Transaction Fee Mechanism",
+      content: ` A 1% transaction fee will be applied to every purchase made online and offline (with merchants) using BYOC Tokens. This mechanism is designed to expand the company's token pool and increase its stake within the ecosystem.
+`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
@@ -134,16 +61,8 @@ Our governance portal makes participation simple with an intuitive interface for
       )
     },
     security: {
-      title: "Secure Transactions",
-      content: `Security is at the core of BYOC token design:
-
-• Built on industry-leading blockchain infrastructure
-• Smart contract audited by multiple independent security firms
-• Multi-signature requirements for treasury operations
-• Transparent transaction verification and traceability
-• Anti-fraud mechanisms to prevent market manipulation
-
-All marketplace transactions using BYOC are recorded on the blockchain, providing immutable proof of ownership and transaction history. Our security team continuously monitors for potential vulnerabilities and implements upgrades as needed.`,
+      title: "Token Minting and Network Participation",
+      content: `Users will be able to participate in mining new BYOC tokens within the community app. This process is described as enhancing transaction verification, strengthening the blockchain, and driving network activity, ultimately boosting BYOC's adoption and ecosystem growth. While the total token supply is initially set at 100 million, the minting authority will allow future minting with no cap on the number of tokens.`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -151,16 +70,9 @@ All marketplace transactions using BYOC are recorded on the blockchain, providin
       )
     },
     rewards: {
-      title: "Reward Mechanism",
-      content: `The BYOC reward system incentivizes positive contributions through:
-
-• Content creation rewards based on community engagement
-• Curation rewards for identifying valuable content
-• Bounty programs for technical contributions and bug reports
-• Ambassador rewards for growing the community
-• Referral bonuses for bringing new users to the platform
-
-Rewards are distributed automatically through smart contracts, ensuring fairness and transparency. The reward algorithm considers multiple factors including quality, uniqueness, and impact of contributions to prevent gaming of the system.`,
+      title: "Gaming Integration through Gamezop Partnership",
+      content: `BYOC has partnered with Gamezop, providing users access to over 500 games. This integration enables users to trade, earn, and cash out in-game assets within a decentralised ecosystem using BYOC tokens, enhancing their gaming experience.
+`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
@@ -168,17 +80,9 @@ Rewards are distributed automatically through smart contracts, ensuring fairness
       )
     },
     benefits: {
-      title: "Staking Benefits",
-      content: `Staking BYOC tokens unlocks a range of exclusive benefits:
-
-• Reduced platform fees (up to 50% discount)
-• Priority access to new features and products
-• Enhanced visibility for your content and offerings
-• Exclusive access to premium content libraries
-• Participation in VIP events and networking opportunities
-• Higher voting power in governance decisions
-
-The benefits scale with your staking tier, with longer staking periods and larger amounts qualifying for premium tiers. Our staking dashboard makes it easy to track your benefits and rewards in real-time.`,
+      title: "Acquisition and Trading of BYOC Tokens",
+      content: ` The community app will enable B2P (Business-to-Person) transactions, allowing users to acquire BYOC tokens directly within the app. Furthermore, users will be able to trade their BYOC tokens on external platforms, fostering a decentralised digital economy. There are also plans to register and launch BYOC on major exchanges like Binance or WazirX to initiate trading.	
+`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
@@ -204,7 +108,7 @@ The benefits scale with your staking tier, with longer staking periods and large
 
   return (
     <section className="py-20 px-4 bg-gray-900 bg-grid-pattern relative">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-purple-500">
@@ -229,145 +133,129 @@ The benefits scale with your staking tier, with longer staking periods and large
         </div>
 
         {/* Key Token Features Heading */}
-        <h3 className="text-2xl font-bold text-white mb-8 ml-4 md:ml-0">Key Token Features</h3>
+        <h3 className="text-2xl font-bold text-white mb-8 text-center">Key Token Features</h3>
 
-        {/* Features Grid with Timeline */}
-        <div className="relative grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Timeline Line (visible on md screens and above) */}
-          <div className="hidden md:block absolute left-0 top-0 bottom-0 bg-gradient-to-b from-purple-600 via-teal-400 to-pink-500 w-[1px]"></div>
+        {/* Features in Single Column */}
+        <div className="relative space-y-6">
+          {/* Timeline Line (vertical line) */}
+          <div className="absolute left-4 top-0 bottom-0 bg-gradient-to-b from-purple-600 via-teal-400 to-pink-500 w-[1px]"></div>
 
-          {/* Left Column Features */}
-          <div className="space-y-6">
-            {/* Feature 1 */}
-            <div className="relative">
-              {/* Timeline Dot - Purple */}
-              <div className="absolute left-0 top-6 w-3 h-3 rounded-full bg-purple-600 -ml-1.5 hidden md:block"></div>
-              <div 
-                className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 md:ml-8 cursor-pointer hover:bg-gray-800/20 transition-colors"
-                onClick={() => openPopup('creation')}
-              >
-                <h4 className="text-lg font-bold text-white mb-2">Creation & Distribution</h4>
-                <p className="text-gray-300">
-                  BYOC tokens are created with fixed supply distribution across ecosystem participants, development, and community treasury.
-                </p>
-              </div>
-            </div>
+          <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20" />
+          <div className="absolute top-0 left-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-15" />
 
-            {/* Feature 2 */}
-            <div className="relative">
-              {/* Timeline Dot - Teal */}
-              <div className="absolute left-0 top-6 w-3 h-3 rounded-full bg-teal-400 -ml-1.5 hidden md:block"></div>
-              <div 
-                className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 md:ml-8 cursor-pointer hover:bg-gray-800/20 transition-colors"
-                onClick={() => openPopup('platform')}
-              >
-                <h4 className="text-lg font-bold text-white mb-2">Platform Integration</h4>
-                <p className="text-gray-300">
-                  Tokens integrate across all BYOC products, enabling transactions, rewards, governance, and premium feature access.
-                </p>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20" />
-            <div className="absolute top-0 left-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-15" />
-            
-            {/* Feature 3 */}
-            <div className="relative">
-              {/* Timeline Dot - Pink */}
-              <div className="absolute left-0 top-6 w-3 h-3 rounded-full bg-pink-500 -ml-1.5 hidden md:block"></div>
-              <div 
-                className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 md:ml-8 cursor-pointer hover:bg-gray-800/20 transition-colors"
-                onClick={() => openPopup('staking')}
-              >
-                <h4 className="text-lg font-bold text-white mb-2">Staking & Rewards</h4>
-                <p className="text-gray-300">
-                  Stake tokens to earn passive income, unlock platform benefits, and participate in exclusive opportunities.
-                </p>
-              </div>
-            </div>
-          
-            {/* Feature 4 */}
-            <div className="relative">
-              {/* Timeline Dot - Purple */}
-              <div className="absolute left-0 top-6 w-3 h-3 rounded-full bg-purple-600 -ml-1.5 hidden md:block"></div>
-              <div 
-                className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 md:ml-8 cursor-pointer hover:bg-gray-800/20 transition-colors"
-                onClick={() => openPopup('governance')}
-              >
-                <h4 className="text-lg font-bold text-white mb-2">Community Governance</h4>
-                <p className="text-gray-300">
-                  Token holders vote on platform improvements, feature prioritization, and ecosystem evolution.
-                </p>
-              </div>
+          {/* Feature 1 */}
+          <div className="relative">
+            {/* Timeline Dot - Purple */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-purple-600 -ml-1.5"></div>
+            <div 
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              onClick={() => openPopup('creation')}
+            >
+              <h4 className="text-lg font-bold text-white mb-2">Transactions with Online and Offline Merchants</h4>
+              <p className="text-gray-300">
+              The BYOC community app empowers seamless crypto payments with BYOC tokens across online, offline, and peer-to-peer transactions via image capture, QR scans, or phone taps.
+              </p>
             </div>
           </div>
 
-          {/* Right Column Features */}
-          <div className="space-y-6">
-            {/* Feature 5 */}
+          {/* Feature 2 */}
+          <div className="relative">
+            {/* Timeline Dot - Teal */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-teal-400 -ml-1.5"></div>
             <div 
-              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              onClick={() => openPopup('platform')}
+            >
+              <h4 className="text-lg font-bold text-white mb-2">E-commerce Vision and Mainstream Crypto Payments</h4>
+              <p className="text-gray-300">
+              The BYOC app aims to lead India's crypto revolution by becoming the go-to payment platform for Gen Z and Gen Beta, driving mainstream adoption like UPI and powering the nation's transition to a crypto-driven economy.
+              </p>
+            </div>
+          </div>
+          
+          {/* Feature 3 */}
+          <div className="relative">
+            {/* Timeline Dot - Pink */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-pink-500 -ml-1.5"></div>
+            <div 
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              onClick={() => openPopup('staking')}
+            >
+              <h4 className="text-lg font-bold text-white mb-2">Marketplace Utility for Content Monetisation</h4>
+              <p className="text-gray-300">
+              The BYOC app features a creator-driven marketplace where users can monetize digital content and NFTs—enhanced by an auction mode—earning directly through BYOC tokens.
+              </p>
+            </div>
+          </div>
+        
+          {/* Feature 4 */}
+          <div className="relative">
+            {/* Timeline Dot - Purple */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-purple-600 -ml-1.5"></div>
+            <div 
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              onClick={() => openPopup('governance')}
+            >
+              <h4 className="text-lg font-bold text-white mb-2">Transaction Fee Mechanism</h4>
+              <p className="text-gray-300">
+              A 1% transaction fee on BYOC token purchases helps grow the token pool and strengthen the ecosystem's value and sustainability.
+              </p>
+            </div>
+          </div>
+
+          {/* Feature 5 */}
+          <div className="relative">
+            {/* Timeline Dot - Teal */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-teal-400 -ml-1.5"></div>
+            <div 
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
               onClick={() => openPopup('security')}
             >
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white">Secure Transactions</h4>
-              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Token Minting and Network Participation</h4>
               <p className="text-gray-300">
-                BYOC token ensures all marketplace transactions are secure, transparent, and verifiable.
+              Users can mine new BYOC tokens in-app, boosting blockchain security, network activity, and ecosystem growth, with future minting enabled beyond the initial 100 million supply.
               </p>
             </div>
+          </div>
 
-            {/* Feature 6 */}
+          {/* Feature 6 */}
+          <div className="relative">
+            {/* Timeline Dot - Purple */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-purple-500 -ml-1.5"></div>
             <div 
-              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
               onClick={() => openPopup('rewards')}
             >
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white">Reward Mechanism</h4>
-              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Gaming Integration through Gamezop Partnership</h4>
               <p className="text-gray-300">
-                Earn tokens for quality content, valuable contributions, and positive community engagement.
+              Through its Gamezop partnership, BYOC offers access to 500+ games where users can trade, earn, and cash out in-game assets using BYOC tokens in a decentralized gaming ecosystem.
               </p>
             </div>
-            
-            {/* Feature 7 */}
+          </div>
+          
+          {/* Feature 7 */}
+          <div className="relative">
+            {/* Timeline Dot - Pink */}
+            <div className="absolute left-4 top-6 w-3 h-3 rounded-full bg-pink-500 -ml-1.5"></div>
             <div 
-              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 cursor-pointer hover:bg-gray-800/20 transition-colors"
+              className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
               onClick={() => openPopup('benefits')}
             >
-              <div className="flex items-center mb-3">
-                <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold text-white">Staking Benefits</h4>
-              </div>
+              <h4 className="text-lg font-bold text-white mb-2">Acquisition and Trading of BYOC Tokens</h4>
               <p className="text-gray-300">
-                Stake your tokens to access premium features, boost visibility, and earn passive rewards.
+              The BYOC app supports B2P transactions and token acquisition, with plans for exchange listings to enable trading and power a decentralized digital economy.
               </p>
             </div>
+          </div>
 
-            {/* Read Full Tokenomics Link */}
-            <div className="pt-2">
-              <a href="#tokenomics" className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
-                Read Full Tokenomics
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </a>
-            </div>
+          {/* Read Full Tokenomics Link */}
+          <div className="pt-6 ml-10">
+            <a href="#tokenomics" className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
+              Read Full Tokenomics
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
@@ -410,8 +298,6 @@ The benefits scale with your staking tier, with longer staking periods and large
           </div>
         </div>
       )}
-
-
     </section>
   );
 };

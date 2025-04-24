@@ -14,9 +14,9 @@ const MobileScreens = () => {
           <div className="grid md:grid-cols-3 gap-10">
             <div className="flex flex-col items-center bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-purple-700/20 transition-all">
               <img
-                src="/images/how-1.png"
+                src="/s0.png"
                 alt="Step 1"
-                className="w-24 h-24 mb-4 object-contain"
+                className="w-[50%] mb-4 object-contain"
               />
               <h3 className="text-2xl font-semibold text-white mb-2">Create Your Account</h3>
               <p className="text-gray-400 text-base">
@@ -25,9 +25,9 @@ const MobileScreens = () => {
             </div>
             <div className="flex flex-col items-center bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-blue-700/20 transition-all">
               <img
-                src="/images/how-2.png"
+                src="/s1.png"
                 alt="Step 2"
-                className="w-24 h-24 mb-4 object-contain"
+                className="w-[50%] mb-4 object-contain"
               />
               <h3 className="text-2xl font-semibold text-white mb-2">Explore Ecosystem</h3>
               <p className="text-gray-400 text-base">
@@ -36,9 +36,9 @@ const MobileScreens = () => {
             </div>
             <div className="flex flex-col items-center bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-teal-700/20 transition-all">
               <img
-                src="/images/how-3.png"
+                src="/s2.png"
                 alt="Step 3"
-                className="w-24 h-24 mb-4 object-contain"
+                className="w-[50%] mb-4 object-contain"
               />
               <h3 className="text-2xl font-semibold text-white mb-2">Visit Marketplace</h3>
               <p className="text-gray-400 text-base">

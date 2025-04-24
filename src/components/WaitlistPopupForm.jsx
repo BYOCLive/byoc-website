@@ -77,7 +77,7 @@ const WaitlistPopupForm = ({ isOpen, onClose }) => {
       ></div>
       
       {/* Modal - Added max-height and overflow-y-auto for scrolling */}
-      <div className="relative bg-gray-800 rounded-2xl w-full max-w-md mx-4 border border-gray-700 shadow-xl max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-gray-800 rounded-2xl w-full max-w-md mx-4 border border-gray-700 shadow-xl max-h-[90vh] overflow-y-auto scrollbar-hide scrollbar-premium">
         <div className="p-8">
           {/* Close button */}
           <button 

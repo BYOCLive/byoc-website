@@ -1,7 +1,12 @@
+import React, { useState } from "react";
+import { WaitlistPopupForm } from "./WaitlistPopupForm"; // Import the Waitlist Popup Form
+
 // Hero Section Component
 const HeroSection = () => {
+  const [showWaitlistPopup, setShowWaitlistPopup] = useState(false); // Waitlist popup state
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-900 bg-grid-pattern">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-900 bg-grid-pattern relative">
       <div className="max-w-4xl">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
           <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -12,15 +17,20 @@ const HeroSection = () => {
           Welcome to the BYOC Web3 Ecosystem
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          A multi-product AI + blockchain ecosystem designed to empower creators, investors, 
-          and communities in the new digital economy.
+          BYOC is an AI + blockchain-powered platform driving secure, real-time digital commerce 
+          across MedTech, FinTech, and Consumer Tech.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-full transition-colors">
+          <button 
+            onClick={() => setShowWaitlistPopup(true)}
+            className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-full transition-colors"
+          >
             Join Waitlist
           </button>
           <button className="bg-transparent border border-purple-600 text-purple-400 hover:bg-purple-900/30 font-medium py-3 px-8 rounded-full flex items-center justify-center gap-2 transition-colors">
-            Explore Ecosystem
+            <a href="#ecosystem" className="hover:text-purple-400 transition-colors">
+              Explore Ecosystem
+            </a>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
@@ -32,8 +42,15 @@ const HeroSection = () => {
           </svg>
         </div>
       </div>
-      {/* Background decoration - could be implemented with absolute positioning */}
+
+      {/* Background decoration */}
       <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20" />
+
+      {/* Waitlist Popup Form */}
+      <WaitlistPopupForm 
+        isOpen={showWaitlistPopup} 
+        onClose={() => setShowWaitlistPopup(false)} 
+      />
     </div>
   );
 };

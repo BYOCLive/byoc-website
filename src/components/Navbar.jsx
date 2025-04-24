@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // Import Lucide icons
-import { WaitlistPopupForm } from './WaitlistPopupForm'; // Import Waitlist Popup Form
+import { Menu, X } from 'lucide-react'; // Lucide icons
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
-  const [showWaitlistPopup, setShowWaitlistPopup] = useState(false); // Waitlist popup state
 
   // Toggle mobile menu visibility
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  // Function to download PDF
+  const downloadPDF = () => {
+    const link = document.createElement('a');
+    link.href = '/pdf/whitepaper.pdf'; // adjust the path based on your public folder structure
+    link.download = 'BYOC-Whitepaper.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -22,38 +30,32 @@ const Navbar = () => {
           <a href="#token" className="hover:text-purple-400 transition-colors">Token</a>
           <a href="#roadmap" className="hover:text-purple-400 transition-colors">Roadmap</a>
           <button 
-            onClick={() => setShowWaitlistPopup(true)} // Show waitlist popup on click
+            onClick={downloadPDF}
             className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
           >
-            Join Waitlist
+            Download PDF
           </button>
         </div>
 
-        {/* Hamburger Icon (Visible on mobile) */}
+        {/* Hamburger Icon */}
         <div className="md:hidden flex items-center">
           <button className="text-white" onClick={toggleMenu}>
-            {isMenuOpen ? (
-              <X size={32} className="text-white" /> // Close Icon
-            ) : (
-              <Menu size={32} className="text-white" /> // Hamburger Icon
-            )}
+            {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
 
-        {/* Mobile Navigation (Sidebar that slides in from the right) */}
+        {/* Mobile Navigation */}
         <div
           className={`md:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white py-4 transition-transform transform ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          {/* Close Button inside the Sidebar */}
           <div className="flex justify-end px-4">
             <button className="text-white" onClick={toggleMenu}>
               <X size={32} />
             </button>
           </div>
 
-          {/* Menu Items */}
           <div className="flex flex-col items-center gap-4">
             <a href="#ecosystem" className="hover:text-purple-400 transition-colors" onClick={toggleMenu}>
               Ecosystem
@@ -65,20 +67,17 @@ const Navbar = () => {
               Roadmap
             </a>
             <button 
-              onClick={() => setShowWaitlistPopup(true)} // Show waitlist popup on click
+              onClick={() => {
+                toggleMenu();
+                downloadPDF();
+              }}
               className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
             >
-              Join Waitlist
+              Download PDF
             </button>
           </div>
         </div>
       </nav>
-
-      {/* Waitlist Popup Form */}
-      <WaitlistPopupForm 
-        isOpen={showWaitlistPopup} 
-        onClose={() => setShowWaitlistPopup(false)} 
-      />
     </>
   );
 };
