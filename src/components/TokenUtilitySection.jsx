@@ -372,25 +372,23 @@ The benefits scale with your staking tier, with longer staking periods and large
         </div>
       </div>
 
-    {activePopup && (
-      <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div className="relative bg-gray-900 border border-gray-700 rounded-xl max-w-2xl w-full max-h-[90vh]">
+      {activePopup && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative bg-gray-900 border border-gray-700 rounded-xl max-w-2xl w-full max-h-[90vh] flex flex-col">
 
-          {/* Close button */}
-          <button 
-            onClick={closePopup}
-            className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+            {/* Close button */}
+            <button 
+              onClick={closePopup}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
 
-          {/* Scrollable Content */}
-          <div className="p-8 overflow-y-auto max-h-[calc(90vh-1rem)] pr-4">
-            {/* Header with icon */}
-            <div className="flex items-center mb-6">
-              <div className="mr-4 p-3 rounded-full bg-gray-800/50 border border-gray-700">
+            {/* Fixed Header */}
+            <div className="flex items-center gap-4 p-6 border-b border-gray-700">
+              <div className="p-3 rounded-full bg-gray-800/50 border border-gray-700">
                 {popupContent[activePopup].icon}
               </div>
               <h3 className="text-2xl font-bold text-white">
@@ -398,19 +396,21 @@ The benefits scale with your staking tier, with longer staking periods and large
               </h3>
             </div>
 
-            {/* Main Content */}
-            <div className="prose prose-invert max-w-none">
-              <p className="text-gray-300 whitespace-pre-line">
-                {popupContent[activePopup].content}
-              </p>
+            {/* Scrollable Content */}
+            <div className="overflow-y-auto p-6 pt-4 border-t border-gray-800 max-h-[calc(90vh-96px)]">
+              <div className="prose prose-invert max-w-none">
+                <p className="text-gray-300 whitespace-pre-line">
+                  {popupContent[activePopup].content}
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Bottom Decoration OUTSIDE scrollable area */}
-          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-teal-400 to-pink-500 z-10" />
+            {/* Bottom Decoration OUTSIDE scrollable area */}
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-teal-400 to-pink-500 z-10" />
+          </div>
         </div>
-      </div>
-    )}
+      )}
+
 
     </section>
   );

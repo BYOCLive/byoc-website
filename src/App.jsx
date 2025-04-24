@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import CursorTrail from './components/CursorTrail'; // Import the new component
 import './index.css';
 import './App.css';
+import MobileScreens from './components/MobileScreens';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <div id="ecosystem">
         <EcosystemSection />
       </div>
+      <MobileScreens/>
       <div id="token">
         <TokenUtilitySection />
       </div>
