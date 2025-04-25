@@ -22,18 +22,20 @@ const App = () => {
       <HeroSection />
       <VisionMissionSection/>
       <TokenomicsSection/>
-      <div id="ecosystem">
+      <div id = "ecosystem">
         <EcosystemSection />
       </div>
       <MobileScreens/>
       <ProductPortfolio/>
-      <div id="token">
+      <div id = "token">
         <TokenUtilitySection />
       </div>
-      <div id="roadmap">
+      <div id = "roadmap">
         <RoadmapSection />
       </div>
-      <JoinSection />
+      <div id = "joinSection">
+        <JoinSection />
+      </div>
       <Footer />
     </div>
   );

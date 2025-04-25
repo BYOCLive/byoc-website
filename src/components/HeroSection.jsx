@@ -6,7 +6,7 @@ const HeroSection = () => {
   const [showWaitlistPopup, setShowWaitlistPopup] = useState(false); // Waitlist popup state
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-900 bg-grid-pattern relative">
+    <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-900 bg-grid-pattern relative mt-16">
       <div className="max-w-4xl">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
           <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -36,11 +36,13 @@ const HeroSection = () => {
             </svg>
           </button>
         </div>
-        <div className="mt-16">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
+        <button className="mt-16">
+          <a href="#joinSection" className="mt-16">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </button>
       </div>
 
       {/* Background decoration */}
