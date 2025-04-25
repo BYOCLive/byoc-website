@@ -36,17 +36,28 @@ const HeroSection = () => {
             </svg>
           </button>
         </div>
-        <button className="mt-16">
-          <a href="#joinSection" className="mt-16">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-400 animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </a>
-        </button>
+        <a href="#joinSection" className="mt-16 block relative z-20">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-8 w-8 text-gray-400 animate-bounce mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </a>
+
+
       </div>
 
       {/* Background decoration */}
-      <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20" />
+      <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20 " />
 
       {/* Waitlist Popup Form */}
       <WaitlistPopupForm 
