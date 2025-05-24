@@ -120,7 +120,7 @@ const OldRoadmapSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gray-900  bg-grid-pattern relative overflow-hidden">
+    <section className="py-20 px-4 bg-gray-900 relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
@@ -143,28 +143,37 @@ const OldRoadmapSection = () => {
 
         {/* Timeline Container */}
         <div className="relative">
-          {/* Central Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 via-teal-400 to-pink-500 rounded-full"></div>
+          {/* Central Timeline Line - Hidden on mobile, visible on desktop */}
+          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-600 via-teal-400 to-pink-500 rounded-full"></div>
+          
+          {/* Mobile Timeline Line - Left aligned */}
+          <div className="block lg:hidden absolute left-6 top-0 w-1 h-full bg-gradient-to-b from-purple-600 via-teal-400 to-pink-500 rounded-full"></div>
           
           {/* Timeline Events */}
-          <div className="space-y-12">
+          <div className="space-y-8 lg:space-y-12">
             {timelineEvents.map((event, index) => (
               <div
                 key={event.id}
                 data-id={event.id}
                 data-timeline-item
                 className={`relative flex items-center ${
-                  event.side === 'left' ? 'justify-start' : 'justify-end'
+                  // Desktop: alternating sides, Mobile: all items on right side
+                  event.side === 'left' ? 'lg:justify-start justify-start' : 'lg:justify-end justify-start'
                 }`}
               >
                 {/* Timeline Content */}
                 <div
-                  className={`w-full max-w-md ${
-                    event.side === 'left' ? 'pr-8 text-right' : 'pl-8 text-left'
+                  className={`w-full ${
+                    // Desktop: max-width and padding based on side, Mobile: consistent left alignment
+                    `lg:max-w-md max-w-none ${
+                      event.side === 'left' 
+                        ? 'lg:pr-8 lg:text-right pl-16 text-left' 
+                        : 'lg:pl-8 lg:text-left pl-16 text-left'
+                    }`
                   }`}
                 >
                   <div
-                    className={`bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm relative transition-all duration-700 transform ${
+                    className={`bg-gray-800/50 border border-gray-700 rounded-xl p-4 lg:p-6 backdrop-blur-sm relative transition-all duration-700 transform ${
                       visibleItems.has(event.id)
                         ? 'opacity-100 translate-y-0 scale-100'
                         : 'opacity-0 translate-y-8 scale-95'
@@ -177,33 +186,36 @@ const OldRoadmapSection = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${getColorClasses(event.color)} opacity-5 rounded-xl`}></div>
                     
                     {/* Year Badge */}
-                    <div className={`inline-block px-4 py-2 rounded-full text-sm font-bold text-white mb-4 bg-gradient-to-r ${getColorClasses(event.color)}`}>
+                    <div className={`inline-block px-3 py-1 lg:px-4 lg:py-2 rounded-full text-sm font-bold text-white mb-3 lg:mb-4 bg-gradient-to-r ${getColorClasses(event.color)}`}>
                       {event.year}
                     </div>
                     
                     {/* Content */}
-                    <h3 className="text-lg font-bold text-white mb-3 leading-tight">
+                    <h3 className="text-base lg:text-lg font-bold text-white mb-2 lg:mb-3 leading-tight">
                       {event.title}
                     </h3>
                     <p className="text-gray-300 text-sm leading-relaxed">
                       {event.description}
                     </p>
 
-                    {/* Arrow pointing to timeline */}
+                    {/* Arrow pointing to timeline - Only on desktop */}
                     <div
-                      className={`absolute top-8 ${
+                      className={`hidden lg:block absolute top-8 ${
                         event.side === 'left'
                           ? 'right-0 translate-x-1/2'
                           : 'left-0 -translate-x-1/2'
                       } w-4 h-4 bg-gray-800 border-2 border-gray-700 transform rotate-45`}
                     ></div>
+
+                    {/* Mobile Arrow - Always points left to timeline */}
+                    <div className="block lg:hidden absolute top-6 left-0 -translate-x-1/2 w-3 h-3 bg-gray-800 border-2 border-gray-700 transform rotate-45"></div>
                   </div>
                 </div>
 
-                {/* Timeline Dot */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
+                {/* Timeline Dot - Desktop centered, Mobile left aligned */}
+                <div className="absolute lg:left-1/2 left-6 transform lg:-translate-x-1/2 -translate-x-1/2 z-10">
                   <div
-                    className={`w-6 h-6 rounded-full border-4 border-gray-900 transition-all duration-500 ${
+                    className={`w-4 h-4 lg:w-6 lg:h-6 rounded-full border-2 lg:border-4 border-gray-900 transition-all duration-500 ${
                       visibleItems.has(event.id)
                         ? `bg-gradient-to-r ${getColorClasses(event.color)} scale-110`
                         : 'bg-gray-600 scale-100'
@@ -215,15 +227,15 @@ const OldRoadmapSection = () => {
                   
                   {/* Pulse Effect */}
                   {visibleItems.has(event.id) && (
-                    <div className={`absolute inset-0 w-6 h-6 rounded-full bg-gradient-to-r ${getColorClasses(event.color)} opacity-20 animate-ping`}></div>
+                    <div className={`absolute inset-0 w-4 h-4 lg:w-6 lg:h-6 rounded-full bg-gradient-to-r ${getColorClasses(event.color)} opacity-20 animate-ping`}></div>
                   )}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Bottom Gradient Fade */}
-          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-16 bg-gradient-to-t from-gray-900 to-transparent rounded-full"></div>
+          {/* Bottom Gradient Fade - Desktop centered, Mobile left aligned */}
+          <div className="absolute bottom-0 lg:left-1/2 left-6 transform lg:-translate-x-1/2 -translate-x-1/2 w-8 h-16 bg-gradient-to-t from-gray-900 to-transparent rounded-full"></div>
         </div>
 
         {/* Stats Summary */}
