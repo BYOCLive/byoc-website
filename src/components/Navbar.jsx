@@ -10,7 +10,7 @@ const Navbar = () => {
 
   const downloadPDF = () => {
     const link = document.createElement('a');
-    link.href = '/pdf/DownloadPDF.pdf';
+    link.href = '/pdf/BYOCWhitepaper.pdf';
     link.download = 'BYOC.pdf';
     document.body.appendChild(link);
     link.click();

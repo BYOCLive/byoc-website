@@ -13,6 +13,9 @@ import MobileScreens from './components/MobileScreens';
 import VisionMissionSection from './components/VisionMissionSection';
 import TokenomicsSection from './components/TokenomicsSection';
 import ProductPortfolio from './components/ProductPortfolio';
+import './App.css'; // Ensure this is imported to apply styles
+import TeamSection from './components/TeamSection';
+import OldRoadmapSection from './components/OldRoadmap';
 
 const App = () => {
   return (
@@ -30,6 +33,8 @@ const App = () => {
       <div id = "token">
         <TokenUtilitySection />
       </div>
+      <TeamSection />
+      <OldRoadmapSection />
       <div id = "roadmap">
         <RoadmapSection />
       </div>
