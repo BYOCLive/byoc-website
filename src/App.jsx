@@ -16,6 +16,8 @@ import ProductPortfolio from './components/ProductPortfolio';
 import './App.css'; // Ensure this is imported to apply styles
 import TeamSection from './components/TeamSection';
 import OldRoadmapSection from './components/OldRoadmap';
+import IndustryLeadersSection from './components/Industrybacked';
+import LogoAlternatives from './components/IndustryBacked123';
 
 const App = () => {
   return (
@@ -33,7 +35,9 @@ const App = () => {
       <div id = "token">
         <TokenUtilitySection />
       </div>
-      <TeamSection />
+      {/* <TeamSection /> */}
+      <IndustryLeadersSection />
+      {/* <LogoAlternatives /> */}
       <OldRoadmapSection />
       <div id = "roadmap">
         <RoadmapSection />
