@@ -5,15 +5,15 @@ const IndustryLeadersSection = () => {
   const logos = [
     { id: 'logo01', name: 'Apple', src: '/logos/logo01.png' },
     { id: 'logo02', name: 'LinkedIn', src: '/logos/logo02.png' },
-    { id: 'logo03', name: 'Discord', src: '/logos/logo03.png' },
+    { id: 'logo03', name: 'Discord', src: '/logos/logo13.png' },
     { id: 'logo04', name: 'NearPay', src: '/logos/logo04.png' },
     { id: 'logo05', name: 'Carnegie Mellon Unive0rsity', src: '/logos/logo05.png' },
-    { id: 'logo06', name: 'Government Initiative', src: '/logos/logo06.png' },
+    { id: 'logo06', name: 'Government Initiative', src: '/logos/logo14.png' },
     { id: 'logo07', name: 'ByteDance', src: '/logos/logo07.png' },
-    { id: 'logo08', name: 'Career Launcher', src: '/logos/logo08.png' },
+    { id: 'logo08', name: 'Career Launcher', src: '/logos/logo15.png' },
     { id: 'logo09', name: 'Lepton', src: '/logos/logo09.png' },
     { id: 'logo10', name: 'Accenture', src: '/logos/logo10.png' },
-    { id: 'logo11', name: 'Infibeam', src: '/logos/logo11.png' },
+    { id: 'logo11', name: 'Infibeam', src: '/logos/logo16.png' },
     { id: 'logo12', name: 'Adobe', src: '/logos/logo12.png' }
   ];
 
