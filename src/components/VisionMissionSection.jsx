@@ -1,3 +1,5 @@
+import BYOCPriceChart from "./Chart";
+
 // Vision & Mission Section Component
 const VisionMissionSection = () => {
   return (
@@ -56,6 +58,8 @@ const VisionMissionSection = () => {
             </p>
           </div>
         </div>
+
+        <BYOCPriceChart/>
       </div>
     </section>
   );
