@@ -8,7 +8,7 @@ const VisionMissionSection = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-blue-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">Vision</span>{" "}
+            <span className="text-blue-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text">Vision</span>{" "}
             <span className="text-gray-300">&</span>{" "}
             <span className="text-teal-400">Mission</span>
           </h2>
@@ -59,7 +59,7 @@ const VisionMissionSection = () => {
           </div>
         </div>
 
-        {/* <BYOCPriceChart/> */}
+        <BYOCPriceChart/>
       </div>
     </section>
   );
