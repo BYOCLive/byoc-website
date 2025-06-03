@@ -1,7 +1,8 @@
 import BYOCPriceChart from "./Chart";
-
+import { useNavigate } from 'react-router-dom';
 // Vision & Mission Section Component
 const VisionMissionSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="py-20 px-4 bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -60,6 +61,18 @@ const VisionMissionSection = () => {
         </div>
 
         <BYOCPriceChart/>
+        {/* Centered Button */}
+        <div className="flex justify-center mt-8">
+          <button 
+            onClick={() => {
+                navigate('/offer');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="w-full max-w-xs py-3 px-6 bg-purple-600 hover:bg-purple-700 transition-colors rounded-lg text-white font-medium"
+          >
+            Buy Now
+          </button>
+        </div>
       </div>
     </section>
   );
