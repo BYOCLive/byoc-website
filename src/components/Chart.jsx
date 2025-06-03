@@ -228,7 +228,7 @@ const BYOCPriceChart = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div className="bg-gray-800/50 rounded-lg p-4">
           <p className="text-gray-400 text-sm">Market Cap</p>
-          <p className="text-white font-bold">₹{(currentPrice * 100000000).toLocaleString('en-IN')}</p>
+          <p className="text-white font-bold">₹{(currentPrice * 40000000).toLocaleString('en-IN')}</p>  {/* Changed 100M to 40M */}
         </div>
         <div className="bg-gray-800/50 rounded-lg p-4">
           <p className="text-gray-400 text-sm">24h Volume</p>
@@ -240,7 +240,7 @@ const BYOCPriceChart = () => {
         </div>
         <div className="bg-gray-800/50 rounded-lg p-4">
           <p className="text-gray-400 text-sm">Circulating Supply</p>
-          <p className="text-white font-bold">100M BYOC</p>
+          <p className="text-white font-bold">40M BYOC</p>  {/* Changed from 100M */}
         </div>
       </div>
 
