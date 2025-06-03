@@ -59,7 +59,7 @@ const VisionMissionSection = () => {
           </div>
         </div>
 
-        {/* <BYOCPriceChart/> */}
+        <BYOCPriceChart/>
       </div>
     </section>
   );
