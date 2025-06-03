@@ -18,7 +18,7 @@ const BYOCPriceChart = () => {
     today.setHours(23, 59, 59, 999); // Set to end of today to include full day
     
     const data = [];
-    let currentPrice = 0.01; // Starting price ₹0.01
+    let currentPrice = 0.05; // Starting price ₹0.01
     
     // Calculate how many days from start date to today
     const daysSinceStart = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
