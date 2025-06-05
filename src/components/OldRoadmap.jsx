@@ -120,7 +120,7 @@ const OldRoadmapSection = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gray-900 bg-grid-pattern relative overflow-hidden">
+    <section id="oldroadmap" className="py-20 px-4 bg-gray-900 bg-grid-pattern relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-600/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400/5 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>

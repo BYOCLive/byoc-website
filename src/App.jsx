@@ -5,6 +5,9 @@ import LandingPage from './pages/LandingPage';
 import Footer from './components/Footer';
 import './App.css'; // Ensure this is imported to apply styles
 import './index.css'; // Ensure this is imported to apply styles
+import UserDashboard from './pages/UserDashboard';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditionsPage';
 
 function App() {
   return (
@@ -14,6 +17,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/offer" element={<LandingPage />} />
+            <Route path="/userdashboard" element={<UserDashboard />} />
+            <Route path="/privacypolicy" element={<div><PrivacyPolicy/></div>} />
+            <Route path="/termsandconditions" element={<div><TermsConditions/></div>} />
           </Routes>
         </main>
         <Footer />

@@ -45,19 +45,19 @@ const Footer = () => {
               <h3 className="text-white text-lg font-medium mb-4">Ecosystem</h3>
               <ul className="space-y-3">
                 <li>
+                  <a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
+                </li>
+                <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">Community App</a>
                 </li>
                 <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">Digital Marketplace</a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">Trust System</a>
-                </li>
-                <li>
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">Token Utility</a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">Roadmap</a>
+                  <a href="#oldroadmap" className="text-gray-400 hover:text-white transition-colors">Roadmap</a>
                 </li>
               </ul>
             </div>
@@ -94,8 +94,8 @@ const Footer = () => {
               © 2025 BYOC. All rights reserved.
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+              <a href="/privacypolicy" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="/termsandconditions" className="hover:text-white transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

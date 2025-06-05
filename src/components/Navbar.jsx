@@ -29,7 +29,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#141821] text-white shadow-md">
       <div className="flex justify-between items-center py-4 px-6 md:px-12">
-        <div className="text-2xl font-bold">BYOC</div>
+        <a href="/">
+          <div className="text-2xl font-bold">BYOC</div>
+        </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">

@@ -21,7 +21,7 @@ import LogoAlternatives from '../components/IndustryBacked123';
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white relative">
+    <div id="home" className="min-h-screen bg-gray-900 text-white relative">
       <CursorTrail /> {/* Add the cursor trail component */}
       <Navbar />
       <HeroSection />
