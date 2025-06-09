@@ -28,7 +28,7 @@ const PrivacyPolicyPage = () => {
             </div>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-purple-500">
-            BYOC Cryptocurrency Token Privacy Policy
+            BYOC Token Privacy Policy
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
             Your privacy and data protection are our top priorities. Learn how we collect, use, and protect your information.
@@ -52,7 +52,7 @@ const PrivacyPolicyPage = () => {
                 <h2 className="text-2xl font-bold text-white">Introduction</h2>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                BYOC Cryptocurrency Token ("BYOC" or "Token") is built on web3 technology and is designed to facilitate various use cases in gaming, finance, artificial intelligence, and consumer products. This Privacy Policy outlines how BYOC collects, uses, and protects user data in compliance with applicable laws and regulations. As a cryptocurrency token built on blockchain technology, BYOC prioritizes transparency, security, and user control.
+                This Privacy Policy outlines how BYOC collects, uses, and protects user data in compliance with applicable laws and regulations. BYOC is a digital token built on web3 technology and is used for various use cases in gaming, finance, artificial intelligence, and consumer products. By using BYOC, you agree to the terms of this Privacy Policy.
               </p>
             </div>
           </div>
@@ -72,30 +72,38 @@ const PrivacyPolicyPage = () => {
               
               <div className="space-y-4">
                 <div className="border-l-2 border-purple-500 pl-4">
-                  <h3 className="text-lg font-bold text-purple-400 mb-2">1. Blockchain Data</h3>
-                  <p className="text-gray-300 mb-2">BYOC collects blockchain data, including:</p>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>- Transaction records: sender and recipient wallet addresses, transaction amounts, and timestamps.</li>
-                    <li>- Smart contract data: contract address, function calls, and execution results.</li>
-                    <li>- Block data: block number, hash, and timestamp.</li>
-                  </ul>
-                </div>
-
-                <div className="border-l-2 border-teal-400 pl-4">
-                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. User-Provided Data</h3>
-                  <p className="text-gray-300 mb-2">Users may provide additional data, such as:</p>
+                  <h3 className="text-lg font-bold text-purple-400 mb-2">1. User-Provided Data</h3>
+                  <p className="text-gray-300 mb-2">Users may provide personal data, such as:</p>
                   <ul className="text-gray-300 space-y-1 ml-4">
                     <li>- Contact information: email address, phone number, or other contact details.</li>
                     <li>- Identification documents: government-issued IDs, passports, or other identification documents for Know-Your-Customer (KYC) or Anti-Money Laundering (AML) compliance.</li>
                   </ul>
                 </div>
 
+                <div className="border-l-2 border-teal-400 pl-4">
+                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. Transaction Data</h3>
+                  <p className="text-gray-300 mb-2">BYOC collects transaction data, including:</p>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>- Transaction records: sender and recipient wallet addresses, transaction amounts, and timestamps.</li>
+                    <li>- Smart contract data: contract address, function calls, and execution results.</li>
+                  </ul>
+                </div>
+
                 <div className="border-l-2 border-pink-500 pl-4">
                   <h3 className="text-lg font-bold text-pink-400 mb-2">3. Usage Data</h3>
-                  <p className="text-gray-300 mb-2">BYOC may collect usage data, including:</p>
+                  <p className="text-gray-300 mb-2">BYOC collects usage data, including:</p>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>- Information about user interactions with the Token, such as transaction history and wallet activity.</li>
+                    <li>- Information about user interactions with the platform, such as page views, clicks, and transactions.</li>
                     <li>- Device and browser information: IP address, device type, browser type, and operating system.</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-2 border-purple-600 pl-4">
+                  <h3 className="text-lg font-bold text-purple-400 mb-2">4. Community Data</h3>
+                  <p className="text-gray-300 mb-2">BYOC collects data about user interactions within communities, including:</p>
+                  <ul className="text-gray-300 space-y-1 ml-4">
+                    <li>- Community membership and participation.</li>
+                    <li>- User-generated content, such as posts, comments, and reviews.</li>
                   </ul>
                 </div>
               </div>
@@ -120,24 +128,25 @@ const PrivacyPolicyPage = () => {
               <div className="space-y-4">
                 <div className="border-l-2 border-purple-500 pl-4">
                   <h3 className="text-lg font-bold text-purple-400 mb-2">1. Token Functionality</h3>
-                  <p className="text-gray-300">BYOC uses blockchain data to facilitate transactions, smart contract execution, and other core functionalities.</p>
+                  <p className="text-gray-300">BYOC uses transaction data to facilitate transactions, smart contract execution, and other core functionalities.</p>
                 </div>
 
                 <div className="border-l-2 border-teal-400 pl-4">
-                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. Compliance</h3>
-                  <p className="text-gray-300 mb-2">BYOC may use user-provided data to comply with applicable laws, regulations, and industry standards, such as:</p>
-                  <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>- AML/KYC regulations: verifying user identity and monitoring transactions for suspicious activity.</li>
-                    <li>- Tax compliance: reporting user income and transactions to relevant authorities.</li>
-                  </ul>
+                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. Platform Improvement</h3>
+                  <p className="text-gray-300">BYOC uses usage data to improve the platform's functionality, user experience, and overall performance.</p>
                 </div>
 
                 <div className="border-l-2 border-pink-500 pl-4">
-                  <h3 className="text-lg font-bold text-pink-400 mb-2">3. Improvement</h3>
-                  <p className="text-gray-300 mb-2">BYOC may use usage data to improve the Token's functionality, user experience, and overall performance, such as:</p>
+                  <h3 className="text-lg font-bold text-pink-400 mb-2">3. Community Management</h3>
+                  <p className="text-gray-300">BYOC uses community data to manage and moderate communities, including enforcing community rules and guidelines.</p>
+                </div>
+
+                <div className="border-l-2 border-purple-600 pl-4">
+                  <h3 className="text-lg font-bold text-purple-400 mb-2">4. Marketing and Advertising</h3>
+                  <p className="text-gray-300 mb-2">BYOC may use user data for marketing and advertising purposes, including:</p>
                   <ul className="text-gray-300 space-y-1 ml-4">
-                    <li>- Analyzing user behavior and transaction patterns to optimize the Token's usability and efficiency.</li>
-                    <li>- Conducting market research and analysis to inform future development and growth strategies.</li>
+                    <li>- Personalized advertising: BYOC may use user data to deliver personalized ads and content.</li>
+                    <li>- Market research: BYOC may use user data for market research and analysis.</li>
                   </ul>
                 </div>
               </div>
@@ -172,11 +181,6 @@ const PrivacyPolicyPage = () => {
                   <h3 className="text-lg font-bold text-pink-400 mb-2">3. Regular Audits</h3>
                   <p className="text-gray-300">BYOC conducts regular security audits to identify and address potential vulnerabilities.</p>
                 </div>
-
-                <div className="border-l-2 border-purple-600 pl-4">
-                  <h3 className="text-lg font-bold text-purple-400 mb-2">4. Decentralized Storage</h3>
-                  <p className="text-gray-300">BYOC may use decentralized storage solutions, such as InterPlanetary File System (IPFS), to store user data in a secure and decentralized manner.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -199,7 +203,7 @@ const PrivacyPolicyPage = () => {
               <div className="space-y-4">
                 <div className="border-l-2 border-purple-500 pl-4">
                   <h3 className="text-lg font-bold text-purple-400 mb-2">1. Data Access</h3>
-                  <p className="text-gray-300">Users can access their transaction history and wallet information.</p>
+                  <p className="text-gray-300">Users can access their transaction history and account information.</p>
                 </div>
 
                 <div className="border-l-2 border-teal-400 pl-4">
@@ -213,14 +217,14 @@ const PrivacyPolicyPage = () => {
                 </div>
 
                 <div className="border-l-2 border-purple-600 pl-4">
-                  <h3 className="text-lg font-bold text-purple-400 mb-2">4. Pseudonymity</h3>
-                  <p className="text-gray-300">Users can maintain pseudonymity by using a wallet address that is not linked to their real-world identity.</p>
+                  <h3 className="text-lg font-bold text-purple-400 mb-2">4. Opt-out</h3>
+                  <p className="text-gray-300">Users can opt-out of marketing and advertising communications.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Blockchain-Specific Considerations */}
+          {/* Agentic AI Applications */}
           <div className="mb-8">
             <div className="bg-gray-800/10 border border-gray-700 rounded-xl p-6">
               <div className="flex items-center gap-4 mb-4">
@@ -230,24 +234,47 @@ const PrivacyPolicyPage = () => {
                     <circle cx="16" cy="16" r="7"></circle>
                   </svg>
                 </div>
-                <h2 className="text-2xl font-bold text-white">Blockchain-Specific Considerations</h2>
+                <h2 className="text-2xl font-bold text-white">Agentic AI Applications</h2>
               </div>
-              <p className="text-gray-300 mb-4">As a blockchain-based cryptocurrency token, BYOC is subject to the following considerations:</p>
+              <p className="text-gray-300 mb-4">BYOC's agentic AI applications may collect additional data, including:</p>
               
               <div className="space-y-4">
                 <div className="border-l-2 border-purple-500 pl-4">
-                  <h3 className="text-lg font-bold text-purple-400 mb-2">1. Immutable Ledger</h3>
-                  <p className="text-gray-300">Blockchain transactions are recorded on an immutable ledger, meaning that transactions cannot be altered or deleted.</p>
+                  <h3 className="text-lg font-bold text-purple-400 mb-2">1. Product Data</h3>
+                  <p className="text-gray-300">BYOC may collect data about products created and sold on the platform, including product descriptions, pricing, and images.</p>
                 </div>
 
                 <div className="border-l-2 border-teal-400 pl-4">
-                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. Publicly Available Data</h3>
-                  <p className="text-gray-300">Blockchain data, including transaction records and smart contract code, is publicly available and can be accessed by anyone.</p>
+                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. User Interaction Data</h3>
+                  <p className="text-gray-300">BYOC may collect data about user interactions with agentic AI applications, including usage patterns and feedback.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Marketplace */}
+          <div className="mb-8">
+            <div className="bg-gray-800/10 border border-gray-700 rounded-xl p-6">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 rounded-full bg-gray-800/50 border border-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 3h18l-1 13H4L3 3z"></path>
+                    <path d="M16 13v4a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-4"></path>
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-bold text-white">Marketplace</h2>
+              </div>
+              <p className="text-gray-300 mb-4">BYOC's marketplace may collect additional data, including:</p>
+              
+              <div className="space-y-4">
+                <div className="border-l-2 border-purple-500 pl-4">
+                  <h3 className="text-lg font-bold text-purple-400 mb-2">1. Product Listings</h3>
+                  <p className="text-gray-300">BYOC may collect data about product listings, including product descriptions, pricing, and images.</p>
                 </div>
 
-                <div className="border-l-2 border-pink-500 pl-4">
-                  <h3 className="text-lg font-bold text-pink-400 mb-2">3. Decentralized Network</h3>
-                  <p className="text-gray-300">BYOC operates on a decentralized network, meaning that there is no central authority controlling the flow of data or transactions.</p>
+                <div className="border-l-2 border-teal-400 pl-4">
+                  <h3 className="text-lg font-bold text-teal-400 mb-2">2. Transaction Data</h3>
+                  <p className="text-gray-300">BYOC may collect transaction data, including buyer and seller information, transaction amounts, and timestamps.</p>
                 </div>
               </div>
             </div>
@@ -290,35 +317,19 @@ const PrivacyPolicyPage = () => {
               </p>
             </div>
 
-            {/* Governing Law */}
+            {/* Appendix */}
             <div className="bg-gray-800/10 border border-gray-700 rounded-xl p-6">
-              <h2 className="text-xl font-bold text-white mb-3">Governing Law</h2>
-              <p className="text-gray-300">
-                This Privacy Policy is governed by the laws of New Delhi, India.
-              </p>
+              <h2 className="text-xl font-bold text-white mb-3">Appendix</h2>
+              <ul className="text-gray-300 space-y-2">
+                <li>- <strong>Data Retention Policy</strong>: BYOC will retain user data for as long as necessary to fulfill the purposes outlined in this Privacy Policy.</li>
+                <li>- <strong>Data Protection Officer</strong>: BYOC's data protection officer can be contacted at coin@byoc.live</li>
+              </ul>
             </div>
 
             {/* Acknowledgment */}
             <div className="bg-gradient-to-r from-purple-600/20 via-teal-400/20 to-pink-500/20 border border-gray-700 rounded-xl p-6">
               <p className="text-gray-300">
-                By using the BYOC Cryptocurrency Token, users acknowledge that they have read, understood, and agree to this Privacy Policy.
-              </p>
-            </div>
-
-            {/* Appendix */}
-            <div className="bg-gray-800/10 border border-gray-700 rounded-xl p-6">
-              <h2 className="text-xl font-bold text-white mb-3">Appendix</h2>
-              <ul className="text-gray-300 space-y-2">
-                <li>- <strong>Blockchain Explorer</strong>: [insert link to blockchain explorer]</li>
-                <li>- <strong>Smart Contract Address</strong>: [insert smart contract address]</li>
-                <li>- <strong>Wallet Providers</strong>: [insert list of recommended wallet providers]</li>
-              </ul>
-            </div>
-
-            {/* Effective Date */}
-            <div className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 text-center">
-              <p className="text-gray-300">
-                This Privacy Policy is effective as of 1-April-2025 and may be updated from time to time. Any updates in the policy would be communicated directly to all the registered users of the platform.
+                By using BYOC, you acknowledge that you have read and understood this Privacy Policy. If you do not agree to this Privacy Policy, please do not use BYOC.
               </p>
             </div>
           </div>

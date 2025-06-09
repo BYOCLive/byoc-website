@@ -8,6 +8,12 @@ import './index.css'; // Ensure this is imported to apply styles
 import UserDashboard from './pages/UserDashboard';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditionsPage';
+// import AdminLogin from './pages/admin/AdminLogin';
+// import AdminDashboard from './pages/admin/AdminDashboard';
+// import UsersList from './pages/admin/UsersList';
+// import UserDetails from './pages/admin/UserDetails';
+// import TransactionsList from './pages/admin/TransactionsList';
+import LegalPolicy from './pages/LegalPolicy';
 
 function App() {
   return (
@@ -20,6 +26,13 @@ function App() {
             <Route path="/userdashboard" element={<UserDashboard />} />
             <Route path="/privacypolicy" element={<div><PrivacyPolicy/></div>} />
             <Route path="/termsandconditions" element={<div><TermsConditions/></div>} />
+            <Route path="/legalpolicy" element={<div><LegalPolicy/></div>} />
+{/* 
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/users" element={<UsersList />} />
+            <Route path="/admin/users/:id" element={<UserDetails />} />
+            <Route path="/admin/transactions" element={<TransactionsList />} /> */}
           </Routes>
         </main>
         <Footer />
