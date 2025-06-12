@@ -27,7 +27,7 @@ const RoadmapSection = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
-              Launch 100M BYOC Token Offering (Solana-based)
+              Launch 1Billion BYOC Token Offering
             </h3>
             <p className="text-gray-300">
               The launch of the 100 million BYOC token offering, based on Solana blockchain, for the expansion of the ecosystem.
@@ -69,7 +69,7 @@ const RoadmapSection = () => {
           </div>
 
           {/* Q1 2026 */}
-          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm">
+          {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm">
             <div className="flex justify-between items-center mb-4">
               <span className="text-gray-300 font-medium">Q1 2026</span>
               <div className="flex items-center">
@@ -83,10 +83,10 @@ const RoadmapSection = () => {
             <p className="text-gray-300">
               Introduction of token minting features directly inside the app, allowing users to create and manage their own tokens.
             </p>
-          </div>
+          </div> */}
 
           {/* Q2 2026 */}
-          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm">
+          {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm">
             <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20" />
             <div className="flex justify-between items-center mb-4">
               <span className="text-gray-300 font-medium">Q2 2026</span>
@@ -101,7 +101,7 @@ const RoadmapSection = () => {
             <p className="text-gray-300">
               Strategic listing of the BYOC token on major exchanges like Binance and WazirX to facilitate public trading and growth.
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

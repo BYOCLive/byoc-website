@@ -53,7 +53,7 @@ const VisionMissionSection = () => {
             </div>
             
             <p className="text-gray-300 leading-relaxed">
-              To become India's leading consumer-led, peer-to-peer cryptocurrency and establish a secure, AI-driven 
+              To become India's leading consumer-led peer-to-peer AI-driven 
               digital transaction ecosystem that supports real-time, cross-industry applications and contributes to 
               widespread financial inclusion.
             </p>

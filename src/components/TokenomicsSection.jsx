@@ -65,7 +65,7 @@ const TokenomicsSection = () => {
           {/* Token Details */}
           <div className="flex flex-wrap justify-center gap-8">
             {/* Blockchain */}
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
+            {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
               <div className="bg-gray-700/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
@@ -74,10 +74,10 @@ const TokenomicsSection = () => {
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Blockchain</h3>
               <p className="text-gray-300">Solana infrastructure</p>
-            </div>
+            </div> */}
   
             {/* Transaction Fee */}
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
+            {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
               <div className="bg-gray-700/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-purple-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 18V5l12-2v13"></path>
@@ -87,10 +87,10 @@ const TokenomicsSection = () => {
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Transaction Fee</h3>
               <p className="text-gray-300">1% per transaction</p>
-            </div>
+            </div> */}
   
             {/* Minting Authority */}
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
+            {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
               <div className="bg-gray-700/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9"></path>
@@ -98,10 +98,10 @@ const TokenomicsSection = () => {
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Minting Authority</h3>
               <p className="text-gray-300">Future minting allowed, no hard cap</p>
-            </div>
+            </div> */}
   
             {/* Vesting Period */}
-            <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
+            {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-6 backdrop-blur-sm flex flex-col w-full md:w-[calc(50%-16px)] lg:w-[calc(25%-24px)]">
               <div className="bg-gray-700/50 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10"></circle>
@@ -110,7 +110,7 @@ const TokenomicsSection = () => {
               </div>
               <h3 className="text-lg font-bold text-white mb-2">Vesting Period</h3>
               <p className="text-gray-300">1 year</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

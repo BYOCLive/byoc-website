@@ -12,7 +12,7 @@ const IndustryLeadersSection = () => {
     { id: 'logo07', name: 'ByteDance', src: '/logos/logo07.png' },
     { id: 'logo08', name: 'Career Launcher', src: '/logos/logo15.png' },
     { id: 'logo09', name: 'Lepton', src: '/logos/logo09.png' },
-    { id: 'logo10', name: 'Accenture', src: '/logos/logo10.png' },
+    { id: 'logo10', name: 'Accenture', src: '/logos/accenture.png' },
     { id: 'logo11', name: 'Infibeam', src: '/logos/logo16.png' },
     { id: 'logo12', name: 'Adobe', src: '/logos/logo12.png' }
   ];

@@ -38,7 +38,9 @@ const Home = () => {
       {/* <TeamSection /> */}
       <IndustryLeadersSection />
       {/* <LogoAlternatives /> */}
+      <div id = "about">
       <OldRoadmapSection />
+      </div>
       <div id = "roadmap">
         <RoadmapSection />
       </div>

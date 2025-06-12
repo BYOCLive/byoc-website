@@ -9,7 +9,7 @@ const Footer = () => {
             <div>
               <h2 className="text-white text-2xl font-bold mb-4">BYOC</h2>
               <p className="text-gray-400 mb-6">
-                Building the future of AI + blockchain ecosystems, 
+                Building the future of AI & blockchain ecosystems, 
                 empowering creators and communities in the new digital 
                 economy.
               </p>

@@ -119,14 +119,14 @@ Features include:
             </div>
             <h3 className="text-xl font-bold text-white mb-3">BYOC Community App</h3>
             <p className="text-gray-300 mb-6 flex-grow">
-              A commerce platform using BYOC tokens for seamless QR, image, and NFC-based transactions, enabling P2P and B2P trades for digital content.
+             Digital marketplace for buying, selling and trading Digital assets, services and knowledge within a secure Blockchain environment. A platform that enables P2P trades for digital content.
             </p>
             <div className="mt-auto">
               <div className="flex items-center mb-4">
                 <div className="w-2 h-2 rounded-full bg-teal-400 mr-2"></div>
                 <span className="text-teal-400 text-sm">Beta Launch Coming Soon</span>
               </div>
-              <button 
+              {/* <button 
                 onClick={() => setActivePopup('community')}
                 className="inline-flex items-center text-white hover:text-purple-400 transition-colors"
               >
@@ -134,43 +134,14 @@ Features include:
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
 
-          {/* Card 3 - VoAI – Voice AI Engine */}
-          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm flex flex-col h-full w-full md:w-[calc(33.333%-16px)]">
-            <div className="bg-gray-700/50 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                <line x1="12" y1="19" x2="12" y2="23"></line>
-                <line x1="8" y1="23" x2="16" y2="23"></line>
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-white mb-3">VoAI – Voice AI Engine</h3>
-            <p className="text-gray-300 mb-6 flex-grow">
-              A highly advanced voice AI system with ASR, noise filtering, neural networks, and NLP capabilities for seamless voice interaction across platforms.
-            </p>
-            <div className="mt-auto">
-              <div className="flex items-center mb-4">
-                <div className="w-2 h-2 rounded-full bg-teal-400 mr-2"></div>
-                <span className="text-teal-400 text-sm">In Development</span>
-              </div>
-              <button 
-                onClick={() => setActivePopup('voiceai')}
-                className="inline-flex items-center text-white hover:text-teal-400 transition-colors"
-              >
-                Discover Features
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-            </div>
-          </div>
+          
 
           {/* Card 4 - Digital Marketplace */}
-          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm flex flex-col h-full w-full md:w-[calc(33.333%-16px)]">
+          {/* <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm flex flex-col h-full w-full md:w-[calc(33.333%-16px)]">
             <div className="bg-gray-700/50 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -198,7 +169,7 @@ Features include:
                 </svg>
               </button>
             </div>
-          </div>
+          </div> */}
           
           {/* Card 1 - Agentic AI Applications */}
           <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm flex flex-col h-full w-full md:w-[calc(33.333%-16px)]">
@@ -213,14 +184,14 @@ Features include:
             </div>
             <h3 className="text-xl font-bold text-white mb-3">Agentic AI Applications</h3>
             <p className="text-gray-300 mb-6 flex-grow">
-              Deployed across 10 sectors through a $10M American partnership, our AI applications reduce admin burden and improve efficiency across industries.
+              Deployed across 10 key sectors through a $10M American strategic partnership, our advanced AI applications significantly reduce administrative burden and improve operational efficiency across industries.
             </p>
             <div className="mt-auto">
               <div className="flex items-center mb-4">
                 <div className="w-2 h-2 rounded-full bg-teal-400 mr-2"></div>
-                <span className="text-teal-400 text-sm">Deployed in Production</span>
+                <span className="text-teal-400 text-sm">In Development</span>
               </div>
-              <button 
+              {/* <button 
                 onClick={() => setActivePopup('agentic')}
                 className="inline-flex items-center text-white hover:text-blue-400 transition-colors"
               >
@@ -228,7 +199,38 @@ Features include:
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                   <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </button>
+              </button> */}
+            </div>
+          </div>
+
+          {/* Card 3 - VoAI – Voice AI Engine */}
+          <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm flex flex-col h-full w-full md:w-[calc(33.333%-16px)]">
+            <div className="bg-gray-700/50 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-3">VoAI – Voice AI Engine</h3>
+            <p className="text-gray-300 mb-6 flex-grow">
+             A highly advanced voice AI system equipped with ASR, intelligent noise filtering, deep neural networks, and robust NLP capabilities for seamless and natural voice interaction across platforms.
+            </p>
+            <div className="mt-auto">
+              <div className="flex items-center mb-4">
+                <div className="w-2 h-2 rounded-full bg-teal-400 mr-2"></div>
+                <span className="text-teal-400 text-sm">In Development</span>
+              </div>
+              {/* <button 
+                onClick={() => setActivePopup('voiceai')}
+                className="inline-flex items-center text-white hover:text-teal-400 transition-colors"
+              >
+                Discover Features
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </button> */}
             </div>
           </div>
           

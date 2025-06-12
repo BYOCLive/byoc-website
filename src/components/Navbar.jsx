@@ -37,13 +37,14 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-8">
           <a href="#ecosystem" className="hover:text-purple-400 transition-colors">Ecosystem</a>
           <a href="#token" className="hover:text-purple-400 transition-colors">Token</a>
+          <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
           <a href="#roadmap" className="hover:text-purple-400 transition-colors">Roadmap</a>
-          <button 
+          {/* <button 
             onClick={downloadPDF}
             className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
           >
             Download PDF
-          </button>
+          </button> */}
         </div>
 
         {/* Hamburger Icon */}
@@ -72,6 +73,9 @@ const Navbar = () => {
           </a>
           <a href="#token" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
             Token
+          </a>
+          <a href="#About" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
+            About
           </a>
           <a href="#roadmap" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
             Roadmap

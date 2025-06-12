@@ -17,7 +17,7 @@ const HeroSection = () => {
           Welcome to the BYOC Web3 Ecosystem
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          BYOC is an AI + blockchain-powered platform driving secure, real-time digital commerce 
+          BYOC is an AI & blockchain powered platform driving secure, real-time digital commerce 
           across MedTech, FinTech, and Consumer Tech.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
