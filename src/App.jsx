@@ -14,7 +14,7 @@ import TermsConditions from './pages/TermsConditionsPage';
 // import UserDetails from './pages/admin/UserDetails';
 // import TransactionsList from './pages/admin/TransactionsList';
 import LegalPolicy from './pages/LegalPolicy';
-import SignIn from './pages/SignIn';
+// import SignIn from './pages/SignIn';
 import PaymentPage from './pages/PaymentPage';
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
             <Route path="/termsandconditions" element={<div><TermsConditions/></div>} />
             <Route path="/legalpolicy" element={<div><LegalPolicy/></div>} />
             <Route path="/signin" element={<div><SignIn/></div>} />
-            <Route path="/payment" element={<div><PaymentPage/></div>} />
+            {/* <Route path="/payment" element={<div><PaymentPage/></div>} /> */}
 
 {/* 
             <Route path="/admin/login" element={<AdminLogin />} />
