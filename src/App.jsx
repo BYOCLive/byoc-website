@@ -29,8 +29,8 @@ function App() {
             <Route path="/privacypolicy" element={<div><PrivacyPolicy/></div>} />
             <Route path="/termsandconditions" element={<div><TermsConditions/></div>} />
             <Route path="/legalpolicy" element={<div><LegalPolicy/></div>} />
-            <Route path="/signin" element={<div><SignIn/></div>} />
-            {/* <Route path="/payment" element={<div><PaymentPage/></div>} /> */}
+            {/* <Route path="/signin" element={<div><SignIn/></div>} /> */}
+            <Route path="/payment" element={<div><PaymentPage/></div>} />
 
 {/* 
             <Route path="/admin/login" element={<AdminLogin />} />
