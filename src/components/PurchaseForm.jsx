@@ -1,7 +1,10 @@
-// Purchase Form Component
-import React, { useState, useEffect } from 'react';
+// Purchase Form Component - Option 1: Using React Router Navigation
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+const API_BASE = 'https://byoc-backend.onrender.com/api';
 
-export default function PurchaseForm ({ purchases, setPurchases }) {
+export default function PurchaseForm() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -13,8 +16,11 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
 
   const [selectedAmount, setSelectedAmount] = useState('');
   const [showCustom, setShowCustom] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
 
-  const predefinedAmounts = [100, 200, 500, 1000, 2000];
+  const predefinedAmounts = [1000, 5000, 10000, 20000, 50000];
 
   const handleAmountSelect = (amount) => {
     if (amount === 'custom') {
@@ -33,42 +39,54 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
     setFormData({...formData, customAmount: value, amount: value});
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const finalAmount = showCustom ? parseInt(formData.customAmount) : formData.amount;
+    setError('');
+    setLoading(true);
     
-    if (finalAmount < 100) {
-      alert('Minimum purchase amount is ₹100');
-      return;
+    try {
+      const finalAmount = showCustom ? parseInt(formData.customAmount) : formData.amount;
+      const purchaseInfo = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        age: formData.age,
+        amount: finalAmount
+      };
+
+      // Prepare purchase data
+      const res = await fetch(`${API_BASE}/form/purchase`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          age: formData.age,
+          amount: finalAmount
+        })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Purchase failed');
+      setSuccessMsg('Purchase successful! Your credentials have been sent to your email.');
+      setFormData({ name: '', email: '', phone: '', age: '', amount: '', customAmount: '' });
+      setSelectedAmount('');
+      setShowCustom(false);
+      // Navigate to payment page with purchase data in state
+      navigate('/payment', { 
+        state: { purchaseData: purchaseInfo } 
+      });
+      
+    } catch (err) {
+      console.error('submitPurchase Error:', err); 
+      setError(err.message);
+    } finally {
+      setLoading(false);
     }
-
-    const newPurchase = {
-      id: Date.now(),
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      age: formData.age,
-      amount: finalAmount,
-      tokens: finalAmount * 10,
-      date: new Date().toLocaleDateString(),
-      status: 'Confirmed'
-    };
-
-    setPurchases([...purchases, newPurchase]);
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      age: '',
-      amount: '',
-      customAmount: ''
-    });
-    setSelectedAmount('');
-    setShowCustom(false);
-    
-    alert('Purchase successful! Your tokens will be credited soon.');
   };
 
   return (
@@ -84,7 +102,7 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
         </div>
 
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-6">
             {/* Personal Information */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -92,10 +110,12 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
                 <input
                   type="text"
                   required
+                  name="name"
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={handleChange}
                   className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
                   placeholder="Enter your full name"
+                  disabled={loading}
                 />
               </div>
               
@@ -105,36 +125,43 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
                   type="number"
                   required
                   min="18"
+                  name="age"
                   value={formData.age}
-                  onChange={(e) => setFormData({...formData, age: e.target.value})}
+                  onChange={handleChange}
                   className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
                   placeholder="Enter your age"
+                  disabled={loading}
                 />
               </div>
             </div>
 
-            <div>
-              <label className="block text-white font-medium mb-2">Email Address *</label>
-              <input
-                type="email"
-                required
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
-                placeholder="Enter your email address"
-              />
-            </div>
-
-            <div>
-              <label className="block text-white font-medium mb-2">Phone Number *</label>
-              <input
-                type="tel"
-                required
-                value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
-                placeholder="Enter your phone number"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-white font-medium mb-2">Email *</label>
+                <input
+                  type="email"
+                  required
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
+                  placeholder="Enter your email"
+                  disabled={loading}
+                />
+              </div>
+              <div>
+                <label className="block text-white font-medium mb-2">Phone *</label>
+                <input
+                  type="text"
+                  required
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
+                  placeholder="Enter your phone number"
+                  disabled={loading}
+                />
+              </div>
             </div>
 
             {/* Amount Selection */}
@@ -151,6 +178,7 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
                         ? 'border-purple-500 bg-purple-500/20 text-purple-300'
                         : 'border-gray-600 bg-gray-700 text-gray-300 hover:border-purple-400'
                     }`}
+                    disabled={loading}
                   >
                     <div className="font-bold text-lg">₹{amount}</div>
                     <div className="text-sm">{amount * 10} Tokens</div>
@@ -164,9 +192,10 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
                       ? 'border-purple-500 bg-purple-500/20 text-purple-300'
                       : 'border-gray-600 bg-gray-700 text-gray-300 hover:border-purple-400'
                   }`}
+                  disabled={loading}
                 >
                   <div className="font-bold text-lg">Custom</div>
-                  <div className="text-sm">Min ₹100</div>
+                  <div className="text-sm">Min ₹1000</div>
                 </button>
               </div>
 
@@ -175,12 +204,14 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
                   <label className="block text-white font-medium mb-2">Custom Amount (₹)</label>
                   <input
                     type="number"
-                    min="100"
+                    min="1000"
                     required={showCustom}
+                    name="customAmount"
                     value={formData.customAmount}
                     onChange={handleCustomAmountChange}
                     className="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-3 text-white focus:border-purple-500 focus:outline-none"
-                    placeholder="Enter custom amount (minimum ₹100)"
+                    placeholder="Enter custom amount (minimum ₹1000)"
+                    disabled={loading}
                   />
                   {formData.customAmount && (
                     <p className="text-purple-400 mt-2">
@@ -216,15 +247,18 @@ export default function PurchaseForm ({ purchases, setPurchases }) {
               </div>
             )}
 
+            {error && <div className="text-red-500 text-center">{error}</div>}
+
             <button
-              type="submit"
+              onClick={handleSubmit}
               className="w-full bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105"
+              disabled={loading}
             >
-              Purchase Now
+              {loading ? 'Processing...' : 'Proceed to Payment'}
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </section>
   );
-};
+}

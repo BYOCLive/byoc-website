@@ -1,19 +1,20 @@
 // Waitlist Popup Form Component
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const WaitlistPopupForm = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
-    walletAddress: '',
     interestedIn: [],
-    experience: '',
-    referralCode: '',
     newsletter: true,
   });
   
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  
+  const API_BASE = 'https://byoc-backend.onrender.com/api';
   
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -40,31 +41,47 @@ const WaitlistPopupForm = ({ isOpen, onClose }) => {
     }
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Here you would typically send the data to your backend API
-    console.log('Form submitted with data:', formData);
-    
-    // Show success message
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds and close popup
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        walletAddress: '',
-        interestedIn: [],
-        experience: '',
-        referralCode: '',
-        newsletter: true,
+    setError('');
+    setLoading(true);
+    try {
+      const res = await fetch(`${API_BASE}/form/waitlist`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
       });
-      onClose();
-    }, 3000);
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Submission failed');
+      setSubmitted(true);
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          interestedIn: [],
+          newsletter: true,
+        });
+        onClose();
+      }, 3000);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
+  
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
   
   if (!isOpen) return null;
   
@@ -146,20 +163,6 @@ const WaitlistPopupForm = ({ isOpen, onClose }) => {
                 </div>
                 
                 <div className="mb-4">
-                  <label htmlFor="walletAddress" className="block text-sm font-medium text-gray-300 mb-1">Wallet Address</label>
-                  <input
-                    type="text"
-                    id="walletAddress"
-                    name="walletAddress"
-                    placeholder="0x..."
-                    value={formData.walletAddress}
-                    onChange={handleChange}
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <p className="text-xs text-gray-400 mt-1">Optional: Add your EVM-compatible wallet address</p>
-                </div>
-                
-                <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-300 mb-2">I'm interested in: *</label>
                   <div className="space-y-2">
                     <div className="flex items-center">
@@ -213,36 +216,6 @@ const WaitlistPopupForm = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 
-                <div className="mb-4">
-                  <label htmlFor="experience" className="block text-sm font-medium text-gray-300 mb-1">Web3 Experience Level *</label>
-                  <select
-                    id="experience"
-                    name="experience"
-                    required
-                    value={formData.experience}
-                    onChange={handleChange}
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="" disabled>Select your experience level</option>
-                    <option value="beginner">Beginner - Just getting started</option>
-                    <option value="intermediate">Intermediate - Some experience</option>
-                    <option value="advanced">Advanced - Regular Web3 user</option>
-                    <option value="expert">Expert - Web3 professional/developer</option>
-                  </select>
-                </div>
-                
-                <div className="mb-6">
-                  <label htmlFor="referralCode" className="block text-sm font-medium text-gray-300 mb-1">Referral Code</label>
-                  <input
-                    type="text"
-                    id="referralCode"
-                    name="referralCode"
-                    value={formData.referralCode}
-                    onChange={handleChange}
-                    className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-                
                 <div className="flex items-center mb-6">
                   <input
                     type="checkbox"
@@ -260,9 +233,11 @@ const WaitlistPopupForm = ({ isOpen, onClose }) => {
                 <button
                   type="submit"
                   className="w-full py-3 px-6 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-colors rounded-lg text-white font-medium"
+                  disabled={loading}
                 >
-                  Join Waitlist
+                  {loading ? 'Submitting...' : 'Join Waitlist'}
                 </button>
+                {error && <div className="text-red-400 text-center mt-2">{error}</div>}
                 
                 <p className="text-xs text-gray-400 text-center mt-4">
                   By joining, you agree to our Terms of Service and Privacy Policy
