@@ -1,5 +1,5 @@
-// Payment Page Component - Option 1: Separate Route Component
-import React, { useState } from 'react';
+// Payment Page Component - Enhanced with Loading Animation and Scroll to Top
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 const API_BASE = 'https://byoc-backend.onrender.com/api';
 
@@ -9,6 +9,11 @@ export default function PaymentPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Get purchase data from navigation state
   const purchaseData = location.state?.purchaseData;
@@ -22,7 +27,10 @@ export default function PaymentPage() {
             Error: No purchase data found. Please go back and fill the form again.
           </div>
           <button
-            onClick={() => navigate('/purchase')}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate('/purchase');
+            }}
             className="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg"
           >
             Go Back to Form
@@ -62,8 +70,13 @@ export default function PaymentPage() {
       
     //   const data = await res.json();
     //   if (!res.ok) throw new Error(data.message || 'Payment confirmation failed');
+      
+      // Simulate API call delay for demo purposes
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       setSuccessMsg('Payment confirmed successfully! Your tokens will be credited shortly.');
       setTimeout(() => {
+        window.scrollTo(0, 0);
         navigate('/');
       }, 2000);
       
@@ -75,8 +88,33 @@ export default function PaymentPage() {
   };
 
   const handleBackToForm = () => {
+    window.scrollTo(0, 0);
     navigate('/purchase');
   };
+
+  // Loading Spinner Component
+  const LoadingSpinner = () => (
+    <svg 
+      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" 
+      xmlns="http://www.w3.org/2000/svg" 
+      fill="none" 
+      viewBox="0 0 24 24"
+    >
+      <circle 
+        className="opacity-25" 
+        cx="12" 
+        cy="12" 
+        r="10" 
+        stroke="currentColor" 
+        strokeWidth="4"
+      ></circle>
+      <path 
+        className="opacity-75" 
+        fill="currentColor" 
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+      ></path>
+    </svg>
+  );
 
   return (
     <section className="py-20 px-4 bg-gray-900 min-h-screen">
@@ -176,22 +214,37 @@ export default function PaymentPage() {
           <div className="flex gap-4 mt-8">
             <button
               onClick={handleBackToForm}
-              className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-lg transition-all"
+              className="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-bold py-4 px-8 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={loading}
             >
               Back to Form
             </button>
             <button
               onClick={handleFinishPayment}
-              className="flex-1 bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105"
+              className="flex-1 bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
               disabled={loading}
             >
-              {loading ? 'Processing...' : 'Finish Payment'}
+              {loading ? (
+                <>
+                  <LoadingSpinner />
+                  Processing...
+                </>
+              ) : (
+                'Finish Payment'
+              )}
             </button>
           </div>
 
-          {error && <div className="text-red-500 text-center mt-4">{error}</div>}
-          {successMsg && <div className="text-green-400 text-center mt-4">{successMsg}</div>}
+          {error && (
+            <div className="text-red-500 text-center mt-4 bg-red-900/20 border border-red-700 rounded-lg p-3">
+              {error}
+            </div>
+          )}
+          {successMsg && (
+            <div className="text-green-400 text-center mt-4 bg-green-900/20 border border-green-700 rounded-lg p-3">
+              {successMsg}
+            </div>
+          )}
         </div>
       </div>
     </section>

@@ -20,7 +20,7 @@ export default function PurchaseForm() {
   const [error, setError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
 
-  const predefinedAmounts = [1000, 5000, 10000, 20000, 50000];
+  const predefinedAmounts = [10000, 20000, 50000, 75000, 100000];
 
   const handleAmountSelect = (amount) => {
     if (amount === 'custom') {
