@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 const API_BASE = 'https://byoc-backend.onrender.com/api';
 
 export default function PurchaseForm() {
+  const [isClicked, setIsClicked] = useState(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
@@ -106,6 +107,10 @@ export default function PurchaseForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+    
+    // Trigger click animation
+    setIsClicked(true);
+    setTimeout(() => setIsClicked(false), 300); // animation duration in ms
     
     // Validate form before submission
     if (!validateForm()) {
@@ -362,11 +367,34 @@ export default function PurchaseForm() {
             <button
               type="button"
               onClick={handleSubmit}
-              className="w-full bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+              className={`w-full bg-gradient-to-r from-purple-600 to-teal-500 hover:from-purple-700 hover:to-teal-600 text-white font-bold py-4 px-8 rounded-lg transition-all transform disabled:opacity-50 disabled:cursor-not-allowed ${isClicked ? 'scale-95' : 'hover:scale-105'}`}
               disabled={loading}
             >
-              {loading ? 'Processing...' : 'Proceed to Payment'}
+              {loading ? (
+                <div className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5 animate-spin text-white" fill="none" viewBox="0 0 24 24">
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
+                    ></path>
+                  </svg>
+                  Processing...
+                </div>
+              ) : (
+                'Proceed to Payment'
+              )}
             </button>
+
+
           </div>
         </div>
       </div>
