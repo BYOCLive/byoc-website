@@ -39,6 +39,7 @@ const Navbar = () => {
           <a href="#token" className="hover:text-purple-400 transition-colors">Token</a>
           <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
           <a href="#roadmap" className="hover:text-purple-400 transition-colors">Roadmap</a>
+          <a href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
           {/* <button 
             onClick={downloadPDF}
             className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"

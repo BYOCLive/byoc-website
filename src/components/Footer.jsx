@@ -79,7 +79,7 @@ const Footer = () => {
                   <a href="#" className="text-gray-400 hover:text-white transition-colors">Blog</a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a>
+                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a>
                 </li>
               </ul>
             </div>
@@ -97,6 +97,8 @@ const Footer = () => {
               <a href="/privacypolicy" className="hover:text-white transition-colors">Privacy Policy</a>
               <a href="/termsandconditions" className="hover:text-white transition-colors">Terms of Service</a>
               <a href="/legalpolicy" className="hover:text-white transition-colors">Legal Policy</a>
+              <a href="/cancellationpolicy" className="hover:text-white transition-colors">Cancellation Policy</a>
+              <a href="/shippingpolicy" className="hover:text-white transition-colors">Shipping Policy</a>
             </div>
           </div>
         </div>

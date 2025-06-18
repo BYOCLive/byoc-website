@@ -18,6 +18,7 @@ import TeamSection from '../components/TeamSection';
 import OldRoadmapSection from '../components/OldRoadmap';
 import IndustryLeadersSection from '../components/Industrybacked';
 import LogoAlternatives from '../components/IndustryBacked123';
+import ContactUsSection from '../components/ContactUs';
 
 const Home = () => {
   return (
@@ -46,6 +47,9 @@ const Home = () => {
       </div>
       <div id = "joinSection">
         <JoinSection />
+      </div>
+      <div id="contact">
+        <ContactUsSection/>
       </div>
     </div>
   );
