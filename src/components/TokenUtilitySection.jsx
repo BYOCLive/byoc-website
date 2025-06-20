@@ -17,8 +17,8 @@ const TokenUtilitySection = () => {
       )
     },
     platform: {
-      title: "E-commerce Vision and Mainstream Crypto Payments",
-      content: `The ultimate aim of the BYOC community app is to become India's leading youth driven platform, particularly appealing to Gen Z and Gen Beta users. Achieving this will enable collaboration with governmental bodies to mainstream crypto payments, positioning BYOC tokens as a prevalent payment method like UPI. The goal is to have millions of users utilising BYOC tokens for transactions across online and offline merchants, playing a significant role in India's next-generation payment systems and the transition towards a cryptocurrency-driven economy.`,
+      title: "E-commerce Vision and Mainstream Payments",
+      content: `The ultimate aim of the BYOC community app is to become India's leading youth driven platform, particularly appealing to Gen Z and Gen Beta users. Achieving this will enable collaboration with governmental bodies to mainstream payments, positioning BYOC tokens as a prevalent payment method like UPI. The goal is to have millions of users utilising BYOC tokens for transactions across online and offline merchants, playing a significant role in India's next-generation payment systems and the transition towards a digital token-driven economy.`,
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-teal-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
@@ -87,7 +87,7 @@ const TokenUtilitySection = () => {
             BYOC Token Utility
           </h2>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            More than just a cryptocurrency – BYOC coin powers our entire ecosystem with real-world applications and value.
+            More than just a digital token – BYOC coin powers our entire ecosystem with real-world applications and value.
           </p>
         </div>
           
@@ -138,9 +138,9 @@ const TokenUtilitySection = () => {
               className="bg-gray-800/10 border border-gray-700 rounded-xl p-6 ml-10 cursor-pointer hover:bg-gray-800/20 transition-colors"
               onClick={() => openPopup('platform')}
             >
-              <h4 className="text-lg font-bold text-white mb-2">E-commerce Vision and Mainstream Crypto Payments</h4>
+              <h4 className="text-lg font-bold text-white mb-2">E-commerce Vision and Mainstream Payments</h4>
               <p className="text-gray-300">
-              The ultimate aim of the BYOC community app is to become India's leading youth driven platform, particularly appealing to Gen Z and Gen Beta users. Achieving this will enable collaboration with governmental bodies to mainstream crypto payments, positioning BYOC tokens as a prevalent payment method like UPI. The goal is to have millions of users utilising BYOC tokens for transactions across online and offline merchants, playing a significant role in India's next-generation payment systems and the transition towards a cryptocurrency-driven economy.
+              The ultimate aim of the BYOC community app is to become India's leading youth driven platform, particularly appealing to Gen Z and Gen Beta users. Achieving this will enable collaboration with governmental bodies to mainstream payments, positioning BYOC tokens as a prevalent payment method like UPI. The goal is to have millions of users utilising BYOC tokens for transactions across online and offline merchants, playing a significant role in India's next-generation payment systems and the transition towards a digital token-driven economy.
               </p>
             </div>
           </div>
@@ -221,14 +221,14 @@ const TokenUtilitySection = () => {
           </div>
 
           {/* Read Full Tokenomics Link */}
-          <div className="pt-6 ml-10">
+          {/* <div className="pt-6 ml-10">
             <a href="#tokenomics" className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors">
               Read Full Tokenomics
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 

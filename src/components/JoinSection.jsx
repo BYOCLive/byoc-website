@@ -49,7 +49,7 @@ const JoinSection = () => {
                 For Investors
               </h3>
               <p className="text-gray-300 mb-8">
-                VCs, crypto enthusiasts, and strategic partners 
+                VCs, digital token enthusiasts, and strategic partners 
                 interested in the future of AI + blockchain.
               </p>
               <a 

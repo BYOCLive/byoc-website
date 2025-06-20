@@ -23,14 +23,14 @@ const RoadmapSection = () => {
               <span className="text-gray-300 font-medium">Q2 2025</span>
               <div className="flex items-center">
                 <div className="w-2 h-2 rounded-full bg-gray-400 mr-2"></div>
-                <span className="text-gray-400 text-sm">Upcoming</span>
+                <span className="text-gray-400 text-sm">Ongoing</span>
               </div>
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
-              Launch 1Billion BYOC Token Offering
+              Launch BYOC Token Offering
             </h3>
             <p className="text-gray-300">
-              The launch of the 100 million BYOC token offering, based on Solana blockchain, for the expansion of the ecosystem.
+              The launch of the 40 million BYOC token build on a secure blockchain, for the expansion of the ecosystem.
             </p>
           </div>
 
@@ -44,10 +44,10 @@ const RoadmapSection = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
-              Partner with Gamezop for NFT Gaming
+              Launch Community Marketplace and BYOC Commerce Marketplace
             </h3>
             <p className="text-gray-300">
-              A strategic partnership with Gamezop for integrating NFT-based gaming experiences into the BYOC ecosystem.
+              The official launch of both the community marketplace and the commerce marketplace, enabling seamless transactions and user engagement.
             </p>
           </div>
 
@@ -61,10 +61,10 @@ const RoadmapSection = () => {
               </div>
             </div>
             <h3 className="text-xl font-bold text-white mb-3">
-              Launch Community Marketplace and BYOC Commerce Marketplace
+              Partner with Gamezop for NFT Gaming
             </h3>
             <p className="text-gray-300">
-              The official launch of both the community marketplace and the commerce marketplace, enabling seamless transactions and user engagement.
+              A strategic partnership with Gamezop for integrating NFT-based gaming experiences into the BYOC ecosystem.
             </p>
           </div>
 

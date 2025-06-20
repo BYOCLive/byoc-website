@@ -137,7 +137,8 @@ const ContactUsSection = () => {
           Alternatively, you can email us directly at{" "}
           <a href="mailto:coin@byoc.live" className="text-white font-medium">coin@byoc.live</a>
           <br />
-          We'd love to hear from you! Our team will respond to your inquiry as soon as possible.
+          We'd love to hear from you! Our team will respond to your inquiry as soon as possible. <br/>
+          <strong>Current Address:</strong> Block 1-A, Sobha Ruby Platinum, Nagasandra, Bangalore 560073,Karnataka
         </p>
       </div>
     </section>

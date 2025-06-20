@@ -9,7 +9,7 @@ export default function FeaturesSection() {
     {
       icon: "💰",
       title: "Instant Transactions",
-      description: "Lightning-fast crypto payments across online and offline merchants"
+      description: "Lightning-fast payments across online and offline merchants"
     },
     {
       icon: "🎮",

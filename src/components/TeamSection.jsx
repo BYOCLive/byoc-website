@@ -22,7 +22,7 @@ const TeamSection = () => {
       id: 2,
       name: "Sarah Martinez",
       role: "CTO & Co-Founder",
-      bio: "Full-stack developer and Solana ecosystem expert. Previously built scalable infrastructure for major crypto exchanges.",
+      bio: "Full-stack developer and Solana ecosystem expert. Previously built scalable infrastructure for major digital token exchanges.",
       image: "/api/placeholder/300/300",
       skills: ["Solana Development", "Smart Contracts", "System Architecture"],
       social: {
@@ -47,7 +47,7 @@ const TeamSection = () => {
       id: 4,
       name: "Emily Rodriguez",
       role: "Community Manager",
-      bio: "Community building expert with a track record of growing engaged crypto communities from zero to 100K+ members.",
+      bio: "Community building expert with a track record of growing engaged digital token communities from zero to 100K+ members.",
       image: "/api/placeholder/300/300",
       skills: ["Community Growth", "Social Media", "Content Strategy"],
       social: {
@@ -72,7 +72,7 @@ const TeamSection = () => {
       id: 6,
       name: "Lisa Wang",
       role: "Marketing Director",
-      bio: "Growth marketing specialist who has launched multiple successful crypto projects with combined market cap of $500M+.",
+      bio: "Growth marketing specialist who has launched multiple successful digital token projects with combined market cap of $500M+.",
       image: "/api/placeholder/300/300",
       skills: ["Growth Marketing", "Brand Strategy", "Partnership Development"],
       social: {
