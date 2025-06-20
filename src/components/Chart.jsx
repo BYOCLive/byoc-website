@@ -68,12 +68,27 @@ const BYOCPriceChart = () => {
       dailyChange = Math.max(-0.03, Math.min(0.03, dailyChange));
       
       // Apply the change
-      currentPrice = currentPrice * (1 + dailyChange);
+      // currentPrice = currentPrice * (1 + dailyChange);
       
-      // Prevent price from going too low
-      if (currentPrice < 0.005) {
-        currentPrice = 0.005 + (random3 * 0.003);
-      }
+      // // Prevent price from going too low
+      // if (currentPrice < 0.005) {
+      //   currentPrice = 0.005 + (random3 * 0.003);
+      // }
+
+            // Apply the change
+            currentPrice = currentPrice * (1 + dailyChange);
+
+            // Prevent price from going too low
+            if (currentPrice < 0.005) {
+              currentPrice = 0.005 + (random3 * 0.003);
+            }
+      
+            // Force price on 15-06-2025 to be above 0.1
+            const isTargetDate = dateForPrice.toDateString() === new Date('2025-06-15').toDateString();
+            if (isTargetDate && currentPrice < 0.1) {
+              currentPrice = 0.100001 + (random3 * 0.01); // force slightly above 0.1
+            }
+      
       
       const formattedDate = dateForPrice.toLocaleDateString('en-IN', {
         day: '2-digit',
