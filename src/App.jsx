@@ -13,7 +13,7 @@ import LegalPolicy from './pages/LegalPolicy';
 import PaymentPage from './pages/PaymentPage';
 import CancellationPolicy from './pages/CancellationPolicyPage';
 import ShippingPolicyPage from './pages/ShippingPolicyPage';
-import Admin from './pages/Admin';
+// import Admin from './pages/Admin';
 
 function App() {
   return (
