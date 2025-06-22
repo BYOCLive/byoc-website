@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-
-const API_BASE = 'https://byoc-backend.onrender.com/api'; 
-// const API_BASE = 'http://localhost:5000/api';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+const API_BASE = 'https://byoc-backend.onrender.com/api';
 
 export default function PurchaseForm() {
   const [isClicked, setIsClicked] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,18 +23,6 @@ export default function PurchaseForm() {
 
   const predefinedAmounts = [10000, 20000, 50000, 75000, 100000];
   const MIN_AMOUNT = 10000;
-
-  // Load Razorpay script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const validateForm = () => {
     const errors = {};
@@ -116,152 +104,13 @@ export default function PurchaseForm() {
     }
   };
 
-  const createRazorpayOrder = async (paymentData) => {
-    try {
-      const response = await fetch(`${API_BASE}/payment/create-order`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(paymentData),
-      });
-
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to create order');
-      }
-
-      return data;
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const verifyRazorpayPayment = async (paymentData) => {
-    try {
-      const response = await fetch(`${API_BASE}/payment/verify`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(paymentData),
-      });
-
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.message || 'Payment verification failed');
-      }
-
-      return data;
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  const handlePaymentFailure = async (orderId, error) => {
-    try {
-      await fetch(`${API_BASE}/payment/failed`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          razorpay_order_id: orderId,
-          error: error
-        }),
-      });
-    } catch (err) {
-      console.error('Error recording payment failure:', err);
-    }
-  };
-
-  const initializeRazorpayPayment = (orderData, userDetails) => {
-    const options = {
-      key: orderData.key, // Razorpay key ID
-      amount: orderData.order.amount, // Amount in paise
-      currency: orderData.order.currency,
-      name: 'BYOC Token Purchase',
-      description: `Purchase of ${(userDetails.amount * 10).toLocaleString()} BYOC Tokens`,
-      order_id: orderData.order.id, // Order ID from backend
-      
-      // Prefill user details
-      prefill: {
-        name: userDetails.name,
-        email: userDetails.email,
-        contact: userDetails.phone,
-      },
-      
-      // Theme customization
-      theme: {
-        color: '#8B5CF6', // Purple color matching your theme
-      },
-      
-      // Payment success handler
-      handler: async function (response) {
-        try {
-          setLoading(true);
-          
-          // Verify payment on backend
-          const verificationResult = await verifyRazorpayPayment({
-            razorpay_order_id: response.razorpay_order_id,
-            razorpay_payment_id: response.razorpay_payment_id,
-            razorpay_signature: response.razorpay_signature,
-          });
-
-          if (verificationResult.success) {
-            // Show success message and reset form
-            setSuccessMsg('Payment successful! Your BYOC tokens have been credited to your account.');
-            
-            // Reset form
-            setFormData({ name: '', email: '', phone: '', age: '', amount: '', customAmount: '' });
-            setSelectedAmount('');
-            setShowCustom(false);
-            setValidationErrors({});
-            setError('');
-          } else {
-            throw new Error('Payment verification failed');
-          }
-        } catch (error) {
-          console.error('Payment verification error:', error);
-          setError('Payment verification failed. Please contact support.');
-        } finally {
-          setLoading(false);
-        }
-      },
-      
-      // Payment failure handler
-      modal: {
-        ondismiss: async function() {
-          await handlePaymentFailure(orderData.order.id, 'Payment cancelled by user');
-          setError('Payment was cancelled. Please try again.');
-          setLoading(false);
-        }
-      }
-    };
-
-    // Open Razorpay checkout
-    const rzp = new window.Razorpay(options);
-    
-    rzp.on('payment.failed', async function (response) {
-      console.error('Payment failed:', response.error);
-      await handlePaymentFailure(orderData.order.id, response.error);
-      setError(`Payment failed: ${response.error.description}`);
-      setLoading(false);
-    });
-
-    rzp.open();
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    setSuccessMsg('');
     
     // Trigger click animation
     setIsClicked(true);
-    setTimeout(() => setIsClicked(false), 300);
+    setTimeout(() => setIsClicked(false), 300); // animation duration in ms
     
     // Validate form before submission
     if (!validateForm()) {
@@ -273,8 +122,7 @@ export default function PurchaseForm() {
     
     try {
       const finalAmount = showCustom ? parseInt(formData.customAmount) : formData.amount;
-      
-      const userDetails = {
+      const purchaseInfo = {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
@@ -282,15 +130,34 @@ export default function PurchaseForm() {
         amount: finalAmount
       };
 
-      // Create Razorpay order
-      const orderData = await createRazorpayOrder(userDetails);
-
-      // Initialize Razorpay payment
-      initializeRazorpayPayment(orderData, userDetails);
+      // Prepare purchase data
+      const res = await fetch(`${API_BASE}/form/purchase`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          age: formData.age,
+          amount: finalAmount
+        })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Purchase failed');
+      setSuccessMsg('Purchase successful! Your credentials have been sent to your email.');
+      setFormData({ name: '', email: '', phone: '', age: '', amount: '', customAmount: '' });
+      setSelectedAmount('');
+      setShowCustom(false);
+      setValidationErrors({});
+      // Navigate to payment page with purchase data in state
+      navigate('/payment', { 
+        state: { purchaseData: purchaseInfo } 
+      });
       
     } catch (err) {
-      console.error('Payment initiation error:', err);
-      setError(err.message || 'Failed to initiate payment. Please try again.');
+      console.error('submitPurchase Error:', err); 
+      setError(err.message);
+    } finally {
       setLoading(false);
     }
   };
@@ -305,14 +172,6 @@ export default function PurchaseForm() {
           <p className="text-lg text-gray-300">
             Fill in your details and choose your investment amount (Minimum: ₹{MIN_AMOUNT.toLocaleString()})
           </p>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <img 
-              src="https://razorpay.com/assets/razorpay-logo.svg" 
-              alt="Razorpay" 
-              className="h-6"
-            />
-            <span className="text-sm text-gray-400">Secure payments powered by Razorpay</span>
-          </div>
         </div>
 
         <div className="bg-gray-800/50 border border-gray-700 rounded-xl p-8 backdrop-blur-sm">
@@ -528,24 +387,14 @@ export default function PurchaseForm() {
                       d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4z"
                     ></path>
                   </svg>
-                  Processing Payment...
+                  Processing...
                 </div>
               ) : (
-                <>
-                  <span className="flex items-center justify-center gap-2">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                    Pay Securely with Razorpay
-                  </span>
-                </>
+                'Proceed to Payment'
               )}
             </button>
 
-            <div className="text-center text-sm text-gray-400">
-              <p>🔒 Your payment is secured with 256-bit SSL encryption</p>
-              <p className="mt-1">We accept UPI, Cards, Net Banking & Wallets</p>
-            </div>
+
           </div>
         </div>
       </div>

@@ -8,16 +8,12 @@ import './index.css'; // Ensure this is imported to apply styles
 import UserDashboard from './pages/UserDashboard';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditionsPage';
-// import AdminLogin from './pages/admin/AdminLogin';
-// import AdminDashboard from './pages/admin/AdminDashboard';
-// import UsersList from './pages/admin/UsersList';
-// import UserDetails from './pages/admin/UserDetails';
-// import TransactionsList from './pages/admin/TransactionsList';
 import LegalPolicy from './pages/LegalPolicy';
 // import SignIn from './pages/SignIn';
 import PaymentPage from './pages/PaymentPage';
 import CancellationPolicy from './pages/CancellationPolicyPage';
 import ShippingPolicyPage from './pages/ShippingPolicyPage';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -35,13 +31,7 @@ function App() {
             <Route path="/shippingpolicy" element={<div><ShippingPolicyPage/></div>}/>
             {/* <Route path="/signin" element={<div><SignIn/></div>} /> */}
             <Route path="/payment" element={<div><PaymentPage/></div>} />
-
-{/* 
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            <Route path="/admin/users" element={<UsersList />} />
-            <Route path="/admin/users/:id" element={<UserDetails />} />
-            <Route path="/admin/transactions" element={<TransactionsList />} /> */}
+            {/* <Route path="/admin" element={<Admin />} /> */}
           </Routes>
         </main>
         <Footer />
