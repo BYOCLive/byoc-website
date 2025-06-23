@@ -22,7 +22,7 @@ export default function PurchaseForm() {
   const [successMsg, setSuccessMsg] = useState('');
 
   const predefinedAmounts = [10000, 20000, 50000, 75000, 100000];
-  const MIN_AMOUNT = 10000;
+  const MIN_AMOUNT = 2;
 
   // Load Razorpay script
   useEffect(() => {
