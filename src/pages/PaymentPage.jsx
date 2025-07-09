@@ -47,29 +47,29 @@ export default function PaymentPage() {
     
     try {
       // TODO: Uncomment when ready to save data to backend
-      /*
-      const res = await fetch(`${API_BASE}/form/payment-done`, {
+      
+      // const res = await fetch(`${API_BASE}/form/payment-done`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({
+      //     ...purchaseData,
+      //     status: 'payment_done',
+      //     timestamp: new Date().toISOString()
+      //   })
+      // });
+      
+      // const data = await res.json();
+      // if (!res.ok) throw new Error(data.message || 'Payment confirmation failed');
+      
+
+      const res2 = await fetch(`${API_BASE}/form/payment-done`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...purchaseData,
-          status: 'payment_done',
-          timestamp: new Date().toISOString()
-        })
+        body: JSON.stringify({ email: purchaseData.email })
       });
       
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message || 'Payment confirmation failed');
-      */
-
-    //   const res = await fetch(`${API_BASE}/form/payment-done`, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ email: purchaseData.email })
-    //   });
-      
-    //   const data = await res.json();
-    //   if (!res.ok) throw new Error(data.message || 'Payment confirmation failed');
+      const data2 = await res2.json();
+      if (!res2.ok) throw new Error(data2.message || 'Payment confirmation failed');
       
       // Simulate API call delay for demo purposes
       await new Promise(resolve => setTimeout(resolve, 2000));

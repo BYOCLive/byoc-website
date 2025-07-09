@@ -9,11 +9,11 @@ import UserDashboard from './pages/UserDashboard';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditionsPage';
 import LegalPolicy from './pages/LegalPolicy';
-// import SignIn from './pages/SignIn';
+import SignIn from './pages/SignIn';
 import PaymentPage from './pages/PaymentPage';
 import CancellationPolicy from './pages/CancellationPolicyPage';
 import ShippingPolicyPage from './pages/ShippingPolicyPage';
-// import Admin from './pages/Admin';
+import Admin from './pages/Admin';
 
 function App() {
   return (
@@ -29,9 +29,9 @@ function App() {
             <Route path="/legalpolicy" element={<div><LegalPolicy/></div>} />
             <Route path="/cancellationpolicy" element={<div><CancellationPolicy/></div>} />
             <Route path="/shippingpolicy" element={<div><ShippingPolicyPage/></div>}/>
-            {/* <Route path="/signin" element={<div><SignIn/></div>} /> */}
+            <Route path="/signin" element={<div><SignIn/></div>} />
             <Route path="/payment" element={<div><PaymentPage/></div>} />
-            {/* <Route path="/admin" element={<Admin />} /> */}
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />

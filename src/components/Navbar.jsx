@@ -1,11 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [userInitials, setUserInitials] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Detect if user is signed in
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setIsSignedIn(!!token);
+
+    // Example: Fetch user info from localStorage or API and extract initials
+    const userInfo = JSON.parse(localStorage.getItem('user') || '{}');
+    if (userInfo?.name) {
+      const initials = userInfo.name
+        .split(' ')
+        .map((word) => word[0])
+        .join('')
+        .toUpperCase();
+      setUserInitials(initials);
+    }
+  }, [location]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleSignOut = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    setIsSignedIn(false);
+    navigate('/');
+  };
+
+  const handleSignIn = () => {
+    navigate('/signin');
   };
 
   const downloadPDF = () => {
@@ -17,14 +50,11 @@ const Navbar = () => {
     document.body.removeChild(link);
   };
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : '';
   }, [isMenuOpen]);
+
+  const isDashboard = location.pathname === '/userdashboard';
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#141821] text-white shadow-md">
@@ -40,12 +70,34 @@ const Navbar = () => {
           <a href="#about" className="hover:text-purple-400 transition-colors">About</a>
           <a href="#roadmap" className="hover:text-purple-400 transition-colors">Roadmap</a>
           <a href="#contact" className="hover:text-purple-400 transition-colors">Contact</a>
-          {/* <button 
-            onClick={downloadPDF}
-            className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
-          >
-            Download PDF
-          </button> */}
+
+          {isSignedIn && isDashboard && (
+            <button
+              onClick={handleSignOut}
+              className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
+            >
+              Sign Out
+            </button>
+          )}
+
+          {isSignedIn && !isDashboard && (
+            <button
+              onClick={() => navigate('/userdashboard')}
+              className="flex items-center justify-center w-10 h-10 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold"
+              title="Go to Dashboard"
+            >
+              {userInitials || <User size={20} />}
+            </button>
+          )}
+
+          {!isSignedIn && (
+            <button
+              onClick={handleSignIn}
+              className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
+            >
+              Sign In
+            </button>
+          )}
         </div>
 
         {/* Hamburger Icon */}
@@ -69,18 +121,47 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col items-start gap-6">
-          <a href="#ecosystem" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
-            Ecosystem
-          </a>
-          <a href="#token" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
-            Token
-          </a>
-          <a href="#About" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
-            About
-          </a>
-          <a href="#roadmap" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">
-            Roadmap
-          </a>
+          <a href="#ecosystem" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Ecosystem</a>
+          <a href="#token" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Token</a>
+          <a href="#about" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">About</a>
+          <a href="#roadmap" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Roadmap</a>
+
+          {isSignedIn && isDashboard && (
+            <button
+              onClick={() => {
+                toggleMenu();
+                handleSignOut();
+              }}
+              className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
+            >
+              Sign Out
+            </button>
+          )}
+
+          {isSignedIn && !isDashboard && (
+            <button
+              onClick={() => {
+                toggleMenu();
+                navigate('/userdashboard');
+              }}
+              className="flex items-center justify-center w-10 h-10 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold"
+            >
+              {userInitials || <User size={20} />}
+            </button>
+          )}
+
+          {!isSignedIn && (
+            <button
+              onClick={() => {
+                toggleMenu();
+                handleSignIn();
+              }}
+              className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
+            >
+              Sign In
+            </button>
+          )}
+
           <button
             onClick={() => {
               toggleMenu();
@@ -93,7 +174,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Backdrop (optional for clicking outside to close) */}
+      {/* Backdrop */}
       {isMenuOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-30"
