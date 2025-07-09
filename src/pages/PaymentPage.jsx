@@ -1,7 +1,7 @@
 // Payment Page Component - Enhanced with Loading Animation and Scroll to Top
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-const API_BASE = 'https://byoc-backend.onrender.com/api';
+const API_BASE = 'https://byoc-backend-xemb.onrender.com/api';
 
 export default function PaymentPage() {
   const navigate = useNavigate();

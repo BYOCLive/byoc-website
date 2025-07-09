@@ -12,7 +12,7 @@ const LandingPage = () => {
 
   useEffect(() => {
     // Ping the backend when the component mounts
-    axios.get('https://byoc-backend.onrender.com/', { timeout: 3000 }) // Replace with your backend health endpoint
+    axios.get('https://byoc-backend-xemb.onrender.com/', { timeout: 3000 }) // Replace with your backend health endpoint
       .then(res => {
         console.log("Backend wakeup ping success:", res.status);
       })

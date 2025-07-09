@@ -11,7 +11,7 @@ const ContactUsSection = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const API_BASE = 'https://byoc-backend.onrender.com/api';
+  const API_BASE = 'https://byoc-backend-xemb.onrender.com/api';
 
   const handleChange = (e) => {
     setFormData(prev => ({
