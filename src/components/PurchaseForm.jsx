@@ -297,7 +297,7 @@ export default function PurchaseForm() {
   };
 
   return (
-    <section className="py-20 px-4 bg-gray-900">
+    <section id="purchaseForm" className="py-20 px-4 bg-gray-900">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-purple-500">

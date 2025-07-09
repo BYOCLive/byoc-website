@@ -23,6 +23,16 @@ export default function UrgencySection() {
     return () => clearInterval(interval);
   }, []);
 
+  const handleClaimNow = () => {
+    const purchaseFormElement = document.getElementById('purchaseForm');
+    if (purchaseFormElement) {
+      purchaseFormElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-r from-red-500 via-pink-500 to-purple-600 py-3">
       {/* Animated background elements */}
@@ -63,7 +73,9 @@ export default function UrgencySection() {
           </div>
 
           {/* CTA Button */}
-          <button className="group relative bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-sm">
+          <button
+            onClick={handleClaimNow}
+            className="group relative bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-300 hover:to-orange-400 text-black font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-sm">
             <span className="relative z-10">Claim Now</span>
             <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
