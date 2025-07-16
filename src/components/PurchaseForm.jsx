@@ -304,7 +304,7 @@ export default function PurchaseForm() {
             Secure Your BYOC Tokens
           </h2>
           <p className="text-lg text-gray-300">
-            Fill in your details and choose your investment amount (Minimum: ₹{MIN_AMOUNT.toLocaleString()})
+             <strong className="text-teal-400">Rs 1 = 10 BYOC Tokens</strong> (Minimum: ₹{MIN_AMOUNT.toLocaleString()})
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">
             <img 

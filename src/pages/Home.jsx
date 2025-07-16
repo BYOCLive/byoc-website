@@ -19,6 +19,9 @@ import OldRoadmapSection from '../components/OldRoadmap';
 import IndustryLeadersSection from '../components/Industrybacked';
 import LogoAlternatives from '../components/IndustryBacked123';
 import ContactUsSection from '../components/ContactUs';
+import FaqSection from '../components/FaqSection';
+import PurchaseForm from '../components/PurchaseForm'; // Import the Purchase Form
+import Graph from '../components/Graph'; // Import the Graph component
 
 const Home = () => {
   return (
@@ -26,28 +29,39 @@ const Home = () => {
       <CursorTrail /> {/* Add the cursor trail component */}
       <Navbar />
       <HeroSection />
-      <VisionMissionSection/>
-      <TokenomicsSection/>
-      <div id = "ecosystem">
-        <EcosystemSection />
-      </div>
+      
       <MobileScreens/>
-      <ProductPortfolio/>
+      <Graph /> 
+      
+      {/* <TokenomicsSection/> */}
+      <div id="investnow">
+        <PurchaseForm/>
+      </div>
+      <div id = "ecosystem">
+        {/* <EcosystemSection /> */}
+      </div>
+      {/* <IndustryLeadersSection /> */}
+      
+      {/* <ProductPortfolio/> */}
       <div id = "token">
-        <TokenUtilitySection />
+        {/* <TokenUtilitySection /> */}
       </div>
       {/* <TeamSection /> */}
-      <IndustryLeadersSection />
+      
       {/* <LogoAlternatives /> */}
+      <FaqSection />
+      <VisionMissionSection/> 
       <div id = "about">
       <OldRoadmapSection />
       </div>
       <div id = "roadmap">
-        <RoadmapSection />
+        {/* <RoadmapSection /> */}
       </div>
       <div id = "joinSection">
-        <JoinSection />
+        {/* <JoinSection /> */}
       </div>
+      
+      
       <div id="contact">
         <ContactUsSection/>
       </div>

@@ -17,16 +17,16 @@ const HeroSection = () => {
           Welcome to the BYOC Web3 Ecosystem
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          BYOC is an AI & blockchain powered platform driving secure, real-time digital commerce 
-          across MedTech, FinTech, and Consumer Tech.
+          A Web3 platform that blends social communities, immersive brand experiences, and digital commerce, all driven by the BYOC in-app wallet.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
-            onClick={() => setShowWaitlistPopup(true)}
-            className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-full transition-colors"
-          >
-            Join Waitlist
-          </button>
+          <a href="#investnow">
+            <button 
+              className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-8 rounded-full transition-colors"
+            >
+              Invest Now
+            </button>
+          </a>
           <button className="bg-transparent border border-purple-600 text-purple-400 hover:bg-purple-900/30 font-medium py-3 px-8 rounded-full flex items-center justify-center gap-2 transition-colors">
             <a href="#ecosystem" className="hover:text-purple-400 transition-colors">
               Explore Ecosystem
@@ -36,7 +36,7 @@ const HeroSection = () => {
             </svg>
           </button>
         </div>
-        <a href="#joinSection" className="mt-16 block relative z-20">
+        <a href="#investnow" className="mt-16 block relative z-20">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8 text-gray-400 animate-bounce mx-auto"

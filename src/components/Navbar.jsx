@@ -125,7 +125,7 @@ const Navbar = () => {
           <a href="#token" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Token</a>
           <a href="#about" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">About</a>
           <a href="#roadmap" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Roadmap</a>
-
+          
           {isSignedIn && isDashboard && (
             <button
               onClick={() => {

@@ -1,7 +1,7 @@
 // HowItWorksSection Component
 const MobileScreens = () => {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-900 bg-grid-pattern relative">
+      <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-gray-900 ">
         <div className="max-w-6xl">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -18,9 +18,9 @@ const MobileScreens = () => {
                 alt="Step 1"
                 className="w-[50%] mb-4 object-contain"
               />
-              <h3 className="text-2xl font-semibold text-white mb-2">Create Your Account</h3>
+              <h3 className="text-2xl font-semibold text-white mb-2">Purchase Tokens</h3>
               <p className="text-gray-400 text-base">
-                Sign up and set up your profile to unlock the ecosystem.
+                Purchase tokens worth ₹500 and unlock the ecosystem.
               </p>
             </div>
             <div className="flex flex-col items-center bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-blue-700/20 transition-all">
@@ -29,9 +29,9 @@ const MobileScreens = () => {
                 alt="Step 2"
                 className="w-[50%] mb-4 object-contain"
               />
-              <h3 className="text-2xl font-semibold text-white mb-2">Explore Ecosystem</h3>
+              <h3 className="text-2xl font-semibold text-white mb-2">Sell Tokens at Profit</h3>
               <p className="text-gray-400 text-base">
-                Browse AI & blockchain tools, connect with creators and communities.
+                Sell your tokens to your friends or the BYOC Network. Earn upto 10–20% per year returns.
               </p>
             </div>
             <div className="flex flex-col items-center bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-teal-700/20 transition-all">
