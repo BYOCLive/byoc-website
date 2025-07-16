@@ -1,7 +1,7 @@
 // HowItWorksSection Component
 const MobileScreens = () => {
     return (
-      <div className=" flex flex-col items-center justify-center text-center px-4 bg-gray-900 py-32 relative">
+      <div className=" flex flex-col items-center justify-center text-center px-4 bg-gray-900 pt-32 relative">
         <div className="max-w-6xl">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
