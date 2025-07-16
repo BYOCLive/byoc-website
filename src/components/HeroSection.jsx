@@ -10,14 +10,14 @@ const HeroSection = () => {
       <div className="max-w-4xl">
         <h1 className="text-5xl md:text-6xl font-bold mb-6">
           <span className="bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-            Learn. Connect. Earn.
+            Buy. Hold. Grow.
           </span>
         </h1>
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-          Welcome to the BYOC Web3 Ecosystem
+          Welcome to the BYOC Ecosystem
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          A Web3 platform that blends social communities, immersive brand experiences, and digital commerce, all driven by the BYOC in-app wallet.
+          A platform where you invest money and grow the currency of the ecosystem which can be used to buy vouchers from your favourite brands.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#investnow">
