@@ -40,7 +40,7 @@ const Home = () => {
       <div id = "ecosystem">
         {/* <EcosystemSection /> */}
       </div>
-      {/* <IndustryLeadersSection /> */}
+      <IndustryLeadersSection />
       
       {/* <ProductPortfolio/> */}
       <div id = "token">

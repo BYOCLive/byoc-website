@@ -156,11 +156,11 @@ const IndustryLeadersSection = () => {
                   className="group relative bg-gradient-to-br from-gray-800/40 via-gray-700/30 to-gray-800/40 backdrop-blur-sm border border-purple-400/20 rounded-xl p-6 hover:from-gray-700/50 hover:via-gray-600/40 hover:to-gray-700/50 hover:border-teal-400/40 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/20"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-teal-400/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative flex items-center justify-center h-16">
+                  <div className="relative flex items-center justify-center h-20">
                     <img 
                       src={logo.src} 
                       alt={logo.name}
-                      className="max-h-12 max-w-full object-contain transition-all duration-300 group-hover:scale-110 filter brightness-110 contrast-110"
+                      className="max-h-20 max-w-full object-contain transition-all duration-300 group-hover:scale-110 filter brightness-110 contrast-110"
                     />
                   </div>
                 </div>
