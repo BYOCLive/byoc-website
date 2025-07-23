@@ -14,6 +14,8 @@ import PaymentPage from './pages/PaymentPage';
 import CancellationPolicy from './pages/CancellationPolicyPage';
 import ShippingPolicyPage from './pages/ShippingPolicyPage';
 import Admin from './pages/Admin';
+import VoucherLandingPage from './pages/Voucher';
+import AILandingPage from './pages/AITools'; 
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path="/signin" element={<div><SignIn/></div>} />
             <Route path="/payment" element={<div><PaymentPage/></div>} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/voucherunderdraft22" element={<VoucherLandingPage />} /> 
+            <Route path="/aitoolsunderdraft22" element={<AILandingPage />} /> 
           </Routes>
         </main>
         <Footer />
