@@ -28,7 +28,7 @@ export default function ValueStack() {
     }
   };
   return (
-    <section className="py-20 px-4 bg-gray-900 relative overflow-hidden bg-grid-pattern">
+    <section className="py-20 px-4 bg-gray-900 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-teal-400 to-pink-500 bg-clip-text text-transparent">

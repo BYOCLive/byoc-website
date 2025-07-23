@@ -7,8 +7,10 @@ import ValueStack from '../components/ai_flow/ValueStack';
 import FAQ from '../components/ai_flow/FAQ';
 import CompleteToolsList from '../components/ai_flow/CompleteToolsList';
 import TestimonialsSection from '../components/ai_flow/TestimonialsSection';
-import PurchaseForm from '../components/PurchaseForm';
+import PurchaseForm from '../components/ai_flow/PurchaseForm';
 import Navbar from '../components/Navbar'; 
+import Testimonials from '../components/ai_flow/Testimonials';
+import IndustryLeadersSection from '../components/ai_flow/Industrybacked';
 
 const AILandingPage = () => {
 
@@ -27,10 +29,12 @@ const AILandingPage = () => {
     <div className="min-h-screen bg-gray-900 text-white relative">
       <Navbar/>
       <HeroSection />
-      <HowItWorks />
+      {/* <HowItWorks /> */}
       <ValueStack />
+      <Testimonials />
+      <IndustryLeadersSection />
       <PurchaseForm id="purchaseform" />
-      <CompleteToolsList />
+      {/* <CompleteToolsList />  */}
       
       {/* <TestimonialsSection /> */}
       <FAQ />

@@ -127,7 +127,7 @@ const IndustryLeadersSection = () => {
 //     </section>
 //   );
     return (
-    <section className="py-20 px-4 bg-gray-900 relative bg-grid-pattern overflow-hidden">
+    <section className="py-20 px-4 bg-gray-900 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Background decorations */}
         {/* <div className="absolute bottom-0 right-0 h-64 w-64 bg-purple-600 rounded-full blur-3xl opacity-20" />

@@ -35,7 +35,7 @@ function App() {
             <Route path="/payment" element={<div><PaymentPage/></div>} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/voucherunderdraft22" element={<VoucherLandingPage />} /> 
-            <Route path="/aitoolsunderdraft22" element={<AILandingPage />} /> 
+            <Route path="/aitools" element={<AILandingPage />} /> 
           </Routes>
         </main>
         <Footer />
