@@ -23,7 +23,7 @@ export default function PurchaseForm() {
 
   // const predefinedAmounts = [10000, 20000, 50000, 75000, 100000];
   const predefinedAmounts = [500, 1000, 2000, 5000, 10000];
-  const MIN_AMOUNT = 200;
+  const MIN_AMOUNT = 500;
 
   // Load Razorpay script
   useEffect(() => {
