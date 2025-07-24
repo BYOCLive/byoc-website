@@ -4,26 +4,22 @@ const API_BASE = 'https://byoc-backend-xemb.onrender.com/api';
 // const API_BASE = 'http://localhost:5000/api';
 
 export default function PurchaseForm() {
+  const FIXED_AMOUNT = 200;
+  
   const [isClicked, setIsClicked] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     age: '',
-    amount: '',
-    customAmount: ''
+    amount: FIXED_AMOUNT
   });
 
-  const [selectedAmount, setSelectedAmount] = useState('');
-  const [showCustom, setShowCustom] = useState(false);
+  const [selectedAmount, setSelectedAmount] = useState(FIXED_AMOUNT);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [validationErrors, setValidationErrors] = useState({});
   const [successMsg, setSuccessMsg] = useState('');
-
-  // const predefinedAmounts = [10000, 20000, 50000, 75000, 100000];
-  const predefinedAmounts = [500, 1000, 2000, 5000, 10000];
-  const MIN_AMOUNT = 200;
 
   // Load Razorpay script
   useEffect(() => {
@@ -66,45 +62,10 @@ export default function PurchaseForm() {
       errors.age = 'You must be at least 18 years old';
     }
     
-    // Amount validation
-    const finalAmount = showCustom ? parseInt(formData.customAmount) : parseInt(formData.amount);
-    if (!finalAmount || finalAmount < MIN_AMOUNT) {
-      errors.amount = `Minimum investment amount is ₹${MIN_AMOUNT.toLocaleString()}`;
-    }
+    // Amount is fixed, no validation needed for amount
     
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
-  };
-
-  const handleAmountSelect = (amount) => {
-    if (amount === 'custom') {
-      setShowCustom(true);
-      setSelectedAmount('custom');
-      setFormData({...formData, amount: ''});
-    } else {
-      setShowCustom(false);
-      setSelectedAmount(amount);
-      setFormData({...formData, amount: amount, customAmount: ''});
-    }
-    // Clear amount validation error when user selects an amount
-    if (validationErrors.amount) {
-      setValidationErrors({...validationErrors, amount: ''});
-    }
-  };
-
-  const handleCustomAmountChange = (e) => {
-    const value = e.target.value;
-    setFormData({...formData, customAmount: value, amount: value});
-    
-    // Real-time validation for custom amount
-    if (value && parseInt(value) < MIN_AMOUNT) {
-      setValidationErrors({
-        ...validationErrors, 
-        amount: `Minimum investment amount is ₹${MIN_AMOUNT.toLocaleString()}`
-      });
-    } else if (validationErrors.amount) {
-      setValidationErrors({...validationErrors, amount: ''});
-    }
   };
 
   const handleChange = (e) => {
@@ -183,8 +144,8 @@ export default function PurchaseForm() {
       key: orderData.key, // Razorpay key ID
       amount: orderData.order.amount, // Amount in paise
       currency: orderData.order.currency,
-      name: 'BYOC Token Purchase',
-      description: `Purchase of ${(userDetails.amount * 10).toLocaleString()} BYOC Tokens`,
+      name: 'BYOC AI Tools Access',
+      description: `Unlock 50+ Premium AI Tools`,
       order_id: orderData.order.id, // Order ID from backend
       
       // Prefill user details
@@ -213,12 +174,11 @@ export default function PurchaseForm() {
 
           if (verificationResult.success) {
             // Show success message and reset form
-            setSuccessMsg('Payment successful! Your BYOC tokens have been credited to your account.');
+            setSuccessMsg('Payment successful! You now have access to 50+ premium AI tools.');
             
             // Reset form
-            setFormData({ name: '', email: '', phone: '', age: '', amount: '', customAmount: '' });
-            setSelectedAmount('');
-            setShowCustom(false);
+            setFormData({ name: '', email: '', phone: '', age: '', amount: FIXED_AMOUNT });
+            setSelectedAmount(FIXED_AMOUNT);
             setValidationErrors({});
             setError('');
           } else {
@@ -273,14 +233,12 @@ export default function PurchaseForm() {
     setLoading(true);
     
     try {
-      const finalAmount = showCustom ? parseInt(formData.customAmount) : formData.amount;
-      
       const userDetails = {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         age: formData.age,
-        amount: finalAmount
+        amount: FIXED_AMOUNT
       };
 
       // Create Razorpay order
@@ -301,10 +259,10 @@ export default function PurchaseForm() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-purple-500">
-            Secure Your BYOC Tokens
+            Unlock Premium AI Tools
           </h2>
           <p className="text-lg text-gray-300">
-             <strong className="text-teal-400">Rs 1 = 10 BYOC Tokens</strong> (Minimum: ₹{MIN_AMOUNT.toLocaleString()})
+             <strong className="text-teal-400">Access 50+ AI Tools for ₹{FIXED_AMOUNT}</strong> (One-time payment)
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">
             <img 
@@ -399,100 +357,42 @@ export default function PurchaseForm() {
               </div>
             </div>
 
-            {/* Amount Selection */}
+            {/* Fixed Amount Display */}
             <div>
               <label className="block text-white font-medium mb-4">
-                Select Investment Amount * (Minimum: ₹{MIN_AMOUNT.toLocaleString()})
+                Payment Amount
               </label>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
-                {predefinedAmounts.map((amount) => (
-                  <button
-                    key={amount}
-                    type="button"
-                    onClick={() => handleAmountSelect(amount)}
-                    className={`p-4 rounded-lg border-2 transition-all ${
-                      selectedAmount === amount
-                        ? 'border-purple-500 bg-purple-500/20 text-purple-300'
-                        : 'border-gray-600 bg-gray-700 text-gray-300 hover:border-purple-400'
-                    }`}
-                    disabled={loading}
-                  >
-                    <div className="font-bold text-lg">₹{amount.toLocaleString()}</div>
-                    <div className="text-sm">{(amount * 10).toLocaleString()} Tokens</div>
-                  </button>
-                ))}
-                <button
-                  type="button"
-                  onClick={() => handleAmountSelect('custom')}
-                  className={`p-4 rounded-lg border-2 transition-all ${
-                    selectedAmount === 'custom'
-                      ? 'border-purple-500 bg-purple-500/20 text-purple-300'
-                      : 'border-gray-600 bg-gray-700 text-gray-300 hover:border-purple-400'
-                  }`}
-                  disabled={loading}
-                >
-                  <div className="font-bold text-lg">Custom</div>
-                  <div className="text-sm">Min ₹{MIN_AMOUNT.toLocaleString()}</div>
-                </button>
+              <div className="bg-gray-700/50 border border-purple-500 rounded-lg p-6 text-center">
+                <div className="font-bold text-2xl text-purple-300 mb-2">₹{FIXED_AMOUNT}</div>
+                <div className="text-sm text-gray-300">Access to 50+ Premium AI Tools</div>
+                <div className="text-xs text-gray-400 mt-2">Lifetime Access</div>
               </div>
-
-              {showCustom && (
-                <div>
-                  <label className="block text-white font-medium mb-2">Custom Amount (₹)</label>
-                  <input
-                    type="number"
-                    min={MIN_AMOUNT}
-                    required={showCustom}
-                    name="customAmount"
-                    value={formData.customAmount}
-                    onChange={handleCustomAmountChange}
-                    className={`w-full bg-gray-700 border rounded-lg px-4 py-3 text-white focus:outline-none ${
-                      validationErrors.amount ? 'border-red-500' : 'border-gray-600 focus:border-purple-500'
-                    }`}
-                    placeholder={`Enter custom amount (minimum ₹${MIN_AMOUNT.toLocaleString()})`}
-                    disabled={loading}
-                  />
-                  {formData.customAmount && parseInt(formData.customAmount) >= MIN_AMOUNT && (
-                    <p className="text-purple-400 mt-2">
-                      You will receive {(parseInt(formData.customAmount || 0) * 10).toLocaleString()} BYOC tokens
-                    </p>
-                  )}
-                </div>
-              )}
-              
-              {validationErrors.amount && (
-                <p className="text-red-400 text-sm mt-2">{validationErrors.amount}</p>
-              )}
             </div>
 
             {/* Purchase Summary */}
-            {(formData.amount || formData.customAmount) && 
-             (!validationErrors.amount) && 
-             (showCustom ? parseInt(formData.customAmount) >= MIN_AMOUNT : true) && (
-              <div className="bg-gray-700/50 rounded-lg p-6 border border-gray-600">
-                <h3 className="text-white font-bold mb-4">Purchase Summary</h3>
-                <div className="space-y-2 text-gray-300">
-                  <div className="flex justify-between">
-                    <span>Investment Amount:</span>
-                    <span className="font-bold">
-                      ₹{(showCustom ? parseInt(formData.customAmount || 0) : formData.amount).toLocaleString()}
-                    </span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>BYOC Tokens:</span>
-                    <span className="font-bold text-purple-400">
-                      {((showCustom ? parseInt(formData.customAmount || 0) : formData.amount) * 10).toLocaleString()} Tokens
-                    </span>
-                  </div>
-                  <div className="border-t border-gray-600 pt-2 mt-4">
-                    <div className="flex justify-between font-bold text-white">
-                      <span>Rate:</span>
-                      <span>₹1 = 10 BYOC Tokens</span>
-                    </div>
+            <div className="bg-gray-700/50 rounded-lg p-6 border border-gray-600">
+              <h3 className="text-white font-bold mb-4">Purchase Summary</h3>
+              <div className="space-y-2 text-gray-300">
+                <div className="flex justify-between">
+                  <span>Payment Amount:</span>
+                  <span className="font-bold">
+                    ₹{FIXED_AMOUNT.toLocaleString()}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span>AI Tools Access:</span>
+                  <span className="font-bold text-purple-400">
+                    50+ Premium Tools
+                  </span>
+                </div>
+                <div className="border-t border-gray-600 pt-2 mt-4">
+                  <div className="flex justify-between font-bold text-white">
+                    <span>Access Duration:</span>
+                    <span>Lifetime</span>
                   </div>
                 </div>
               </div>
-            )}
+            </div>
 
             {error && (
               <div className="bg-red-500/20 border border-red-500 rounded-lg p-4">
@@ -537,7 +437,7 @@ export default function PurchaseForm() {
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                     </svg>
-                    Pay Securely with Razorpay
+                    Unlock AI Tools Access
                   </span>
                 </>
               )}
@@ -545,7 +445,7 @@ export default function PurchaseForm() {
 
             <div className="text-center text-sm text-gray-400">
               <p>🔒 Your payment is secured with 256-bit SSL encryption</p>
-              <p className="mt-1">We accept UPI, Cards, Net Banking & Wallets</p>
+              <p className="mt-1">Get instant access to 50+ premium AI tools</p>
             </div>
           </div>
         </div>
