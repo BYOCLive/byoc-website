@@ -2,13 +2,14 @@ import React from "react";
 
 const logos = [
   { name: "Notion Q&A", src: "/aitools/notionqna.png", category: "Productivity" },
-  { name: "NotebookLM", src: "/aitools/notebooklm.png", category: "Writing" },
+  // { name: "NotebookLM", src: "/aitools/notebooklm.png", category: "Writing" },
   { name: "Cursor", src: "/aitools/cursor.png", category: "Productivity" },
-  { name: "Rytr", src: "/aitools/rytr.png", category: "Writing" },
-  { name: "Reclaim", src: "/aitools/reclaimai.png", category: "Productivity" },
-  { name: "Sudowrite", src: "/aitools/sudowrite.png", category: "Writing" },
-  { name: "Airops", src: "/aitools/airops.png", category: "Marketing" },
-  { name: "Fathom", src: "/aitools/fathom.png", category: "Productivity" },
+  // { name: "Rytr", src: "/aitools/rytr.png", category: "Writing" },
+  // { name: "Reclaim", src: "/aitools/reclaimai.png", category: "Productivity" },
+  // { name: "Sudowrite", src: "/aitools/sudowrite.png", category: "Writing" },
+  // { name: "Airops", src: "/aitools/airops.png", category: "Marketing" },
+  // { name: "Fathom", src: "/aitools/fathom.png", category: "Productivity" },
+  { name: "Lovable", src: "/aitools/lovable.png", category: "Technology" },
   { name: "n8n", src: "/aitools/n8n.png", category: "Productivity" },
   { name: "AdCreative", src: "/aitools/aicreativeai.png", category: "Marketing" },
 ];
