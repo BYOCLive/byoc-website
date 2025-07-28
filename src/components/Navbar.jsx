@@ -41,6 +41,27 @@ const Navbar = () => {
     navigate('/signin');
   };
 
+  const handleNavigation = (sectionId) => {
+    toggleMenu();
+    
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first, then scroll to section
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   const downloadPDF = () => {
     const link = document.createElement('a');
     link.href = '/pdf/BYOCWhitepaper.pdf';
@@ -121,10 +142,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex flex-col items-start gap-6">
-          <a href="#ecosystem" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Ecosystem</a>
-          <a href="#token" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Token</a>
-          <a href="#about" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">About</a>
-          <a href="#roadmap" onClick={toggleMenu} className="hover:text-purple-400 transition-colors">Roadmap</a>
+          <button onClick={() => handleNavigation('ecosystem')} className="hover:text-purple-400 transition-colors text-left">Ecosystem</button>
+          <button onClick={() => handleNavigation('token')} className="hover:text-purple-400 transition-colors text-left">Token</button>
+          <button onClick={() => handleNavigation('about')} className="hover:text-purple-400 transition-colors text-left">About</button>
+          <button onClick={() => handleNavigation('roadmap')} className="hover:text-purple-400 transition-colors text-left">Roadmap</button>
           
           {isSignedIn && isDashboard && (
             <button
@@ -162,7 +183,7 @@ const Navbar = () => {
             </button>
           )}
 
-          <button
+          {/* <button
             onClick={() => {
               toggleMenu();
               downloadPDF();
@@ -170,7 +191,7 @@ const Navbar = () => {
             className="bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-6 rounded-full transition-colors"
           >
             Download PDF
-          </button>
+          </button> */}
         </div>
       </div>
 

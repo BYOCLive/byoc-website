@@ -17,7 +17,7 @@ const HeroSection = () => {
           Welcome to the BYOC Ecosystem
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-          A platform where you invest money and grow the currency of the ecosystem which can be used to buy vouchers from your favourite brands.
+          A platform where you invest money and grow the currency of the ecosystem which can be used to buy tokens from your favourite brands.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="#investnow">

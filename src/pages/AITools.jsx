@@ -9,7 +9,7 @@ import CompleteToolsList from '../components/ai_flow/CompleteToolsList';
 import TestimonialsSection from '../components/ai_flow/TestimonialsSection';
 import PurchaseForm from '../components/ai_flow/PurchaseForm';
 import Navbar from '../components/Navbar'; 
-import Testimonials from '../components/ai_flow/Testimonials';
+import Testimonials from '../components/ai_flow/Testimonial';
 import IndustryLeadersSection from '../components/ai_flow/Industrybacked';
 
 const AILandingPage = () => {

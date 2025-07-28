@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import CursorTrail from '../components/CursorTrail'; // Import the new component
 import '../index.css';
 import '../App.css';
-import MobileScreens from '../components/MobileScreens';
+import MobileScreens from '../components/MobileScreensCommunity';
 import VisionMissionSection from '../components/VisionMissionSection';
 import TokenomicsSection from '../components/TokenomicsSection';
 import ProductPortfolio from '../components/ProductPortfolio';
@@ -22,6 +22,7 @@ import ContactUsSection from '../components/ContactUs';
 import FaqSection from '../components/FaqSection';
 import PurchaseForm from '../components/PurchaseForm'; // Import the Purchase Form
 import Graph from '../components/Graph'; // Import the Graph component
+import CommunitySection from '../components/CommunitySection'; // Import the Community Section
 
 const Home = () => {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
       <MobileScreens/>
       <Graph /> 
       
+      <CommunitySection /> {/* Add the Community Section at the top */}
       {/* <TokenomicsSection/> */}
       <div id="investnow">
         <PurchaseForm/>

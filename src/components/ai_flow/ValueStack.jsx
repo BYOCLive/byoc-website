@@ -77,10 +77,10 @@ export default function ValueStack() {
         {/* Value Proposition */}
         <div className=" rounded-xl p-8 text-center">
           <button
-            className="py-4 px-12 bg-purple-600 hover:bg-purple-700 transition-colors rounded-lg text-white font-bold text-lg shadow-lg"
+            className="py-4 px-12 bg-purple-600 hover:bg-purple-700 transition-colors rounded-full text-white font-bold text-lg shadow-lg cursor-pointer"
             onClick={handleScroll}
           >
-            Access All Tools Today
+            Get your Access Today
           </button>
         </div>
       </div>
